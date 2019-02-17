@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84A119FD2219D104002F81D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A119FC2219D104002F81D1 /* AppDelegate.swift */; };
+		84A119FF2219D104002F81D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A119FE2219D104002F81D1 /* ViewController.swift */; };
+		84A11A022219D104002F81D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A11A002219D104002F81D1 /* Main.storyboard */; };
+		84A11A052219D104002F81D1 /* Breach_Control.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84A11A032219D104002F81D1 /* Breach_Control.xcdatamodeld */; };
+		84A11A072219D106002F81D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A11A062219D106002F81D1 /* Assets.xcassets */; };
+		84A11A0A2219D106002F81D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A11A082219D106002F81D1 /* LaunchScreen.storyboard */; };
+		84A11A152219D106002F81D1 /* Breach_ControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A11A142219D106002F81D1 /* Breach_ControlTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84A11A112219D106002F81D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84A119F12219D104002F81D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84A119F82219D104002F81D1;
+			remoteInfo = "Breach Control";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84A119F92219D104002F81D1 /* Breach Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Breach Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A119FC2219D104002F81D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84A119FE2219D104002F81D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84A11A012219D104002F81D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84A11A042219D104002F81D1 /* Breach_Control.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Breach_Control.xcdatamodel; sourceTree = "<group>"; };
+		84A11A062219D106002F81D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84A11A092219D106002F81D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84A11A0B2219D106002F81D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84A11A102219D106002F81D1 /* Breach ControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Breach ControlTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A11A142219D106002F81D1 /* Breach_ControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breach_ControlTests.swift; sourceTree = "<group>"; };
+		84A11A162219D106002F81D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84A119F62219D104002F81D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A11A0D2219D106002F81D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84A119F02219D104002F81D1 = {
+			isa = PBXGroup;
+			children = (
+				84A119FB2219D104002F81D1 /* Breach Control */,
+				84A11A132219D106002F81D1 /* Breach ControlTests */,
+				84A119FA2219D104002F81D1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84A119FA2219D104002F81D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84A119F92219D104002F81D1 /* Breach Control.app */,
+				84A11A102219D106002F81D1 /* Breach ControlTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84A119FB2219D104002F81D1 /* Breach Control */ = {
+			isa = PBXGroup;
+			children = (
+				84A119FC2219D104002F81D1 /* AppDelegate.swift */,
+				84A119FE2219D104002F81D1 /* ViewController.swift */,
+				84A11A002219D104002F81D1 /* Main.storyboard */,
+				84A11A062219D106002F81D1 /* Assets.xcassets */,
+				84A11A082219D106002F81D1 /* LaunchScreen.storyboard */,
+				84A11A0B2219D106002F81D1 /* Info.plist */,
+				84A11A032219D104002F81D1 /* Breach_Control.xcdatamodeld */,
+			);
+			path = "Breach Control";
+			sourceTree = "<group>";
+		};
+		84A11A132219D106002F81D1 /* Breach ControlTests */ = {
+			isa = PBXGroup;
+			children = (
+				84A11A142219D106002F81D1 /* Breach_ControlTests.swift */,
+				84A11A162219D106002F81D1 /* Info.plist */,
+			);
+			path = "Breach ControlTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84A119F82219D104002F81D1 /* Breach Control */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A11A192219D106002F81D1 /* Build configuration list for PBXNativeTarget "Breach Control" */;
+			buildPhases = (
+				84A119F52219D104002F81D1 /* Sources */,
+				84A119F62219D104002F81D1 /* Frameworks */,
+				84A119F72219D104002F81D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Breach Control";
+			productName = "Breach Control";
+			productReference = 84A119F92219D104002F81D1 /* Breach Control.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84A11A0F2219D106002F81D1 /* Breach ControlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A11A1C2219D106002F81D1 /* Build configuration list for PBXNativeTarget "Breach ControlTests" */;
+			buildPhases = (
+				84A11A0C2219D106002F81D1 /* Sources */,
+				84A11A0D2219D106002F81D1 /* Frameworks */,
+				84A11A0E2219D106002F81D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84A11A122219D106002F81D1 /* PBXTargetDependency */,
+			);
+			name = "Breach ControlTests";
+			productName = "Breach ControlTests";
+			productReference = 84A11A102219D106002F81D1 /* Breach ControlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84A119F12219D104002F81D1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Silent Quadrant";
+				TargetAttributes = {
+					84A119F82219D104002F81D1 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					84A11A0F2219D106002F81D1 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 84A119F82219D104002F81D1;
+					};
+				};
+			};
+			buildConfigurationList = 84A119F42219D104002F81D1 /* Build configuration list for PBXProject "Breach Control" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84A119F02219D104002F81D1;
+			productRefGroup = 84A119FA2219D104002F81D1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84A119F82219D104002F81D1 /* Breach Control */,
+				84A11A0F2219D106002F81D1 /* Breach ControlTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84A119F72219D104002F81D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A11A0A2219D106002F81D1 /* LaunchScreen.storyboard in Resources */,
+				84A11A072219D106002F81D1 /* Assets.xcassets in Resources */,
+				84A11A022219D104002F81D1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A11A0E2219D106002F81D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84A119F52219D104002F81D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A11A052219D104002F81D1 /* Breach_Control.xcdatamodeld in Sources */,
+				84A119FF2219D104002F81D1 /* ViewController.swift in Sources */,
+				84A119FD2219D104002F81D1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A11A0C2219D106002F81D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A11A152219D106002F81D1 /* Breach_ControlTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84A11A122219D106002F81D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84A119F82219D104002F81D1 /* Breach Control */;
+			targetProxy = 84A11A112219D106002F81D1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84A11A002219D104002F81D1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84A11A012219D104002F81D1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84A11A082219D106002F81D1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84A11A092219D106002F81D1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84A11A172219D106002F81D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84A11A182219D106002F81D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84A11A1A2219D106002F81D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZSFX78H3ZT;
+				INFOPLIST_FILE = "Breach Control/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.silentquadrant.Breach-Control";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84A11A1B2219D106002F81D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZSFX78H3ZT;
+				INFOPLIST_FILE = "Breach Control/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.silentquadrant.Breach-Control";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		84A11A1D2219D106002F81D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZSFX78H3ZT;
+				INFOPLIST_FILE = "Breach ControlTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.silentquadrant.Breach-ControlTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Breach Control.app/Breach Control";
+			};
+			name = Debug;
+		};
+		84A11A1E2219D106002F81D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZSFX78H3ZT;
+				INFOPLIST_FILE = "Breach ControlTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.silentquadrant.Breach-ControlTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Breach Control.app/Breach Control";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84A119F42219D104002F81D1 /* Build configuration list for PBXProject "Breach Control" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A11A172219D106002F81D1 /* Debug */,
+				84A11A182219D106002F81D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84A11A192219D106002F81D1 /* Build configuration list for PBXNativeTarget "Breach Control" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A11A1A2219D106002F81D1 /* Debug */,
+				84A11A1B2219D106002F81D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84A11A1C2219D106002F81D1 /* Build configuration list for PBXNativeTarget "Breach ControlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A11A1D2219D106002F81D1 /* Debug */,
+				84A11A1E2219D106002F81D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		84A11A032219D104002F81D1 /* Breach_Control.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				84A11A042219D104002F81D1 /* Breach_Control.xcdatamodel */,
+			);
+			currentVersion = 84A11A042219D104002F81D1 /* Breach_Control.xcdatamodel */;
+			path = Breach_Control.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 84A119F12219D104002F81D1 /* Project object */;
+}
