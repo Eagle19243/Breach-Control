@@ -1,12 +1,12 @@
 PODS:
-  - Alamofire (4.3.0)
-  - IQKeyboardManagerSwift (5.0.8)
+  - Alamofire (5.0.0-beta.2)
+  - IQKeyboardManagerSwift (6.0.5)
   - MBProgressHUD (1.1.0)
   - "UITextView+Placeholder (1.2.1)"
 
 DEPENDENCIES:
-  - Alamofire (~> 4.3.0)
-  - IQKeyboardManagerSwift (~> 5.0.0)
+  - Alamofire (~> 5.0.0-beta.2)
+  - IQKeyboardManagerSwift (~> 6.0.0)
   - MBProgressHUD
   - "UITextView+Placeholder (~> 1.2)"
 
@@ -18,11 +18,11 @@ SPEC REPOS:
     - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
-  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
-  IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
+  Alamofire: d1e5493588babe3e7b56ae29e8032942f4de09fe
+  IQKeyboardManagerSwift: c14eca30f6001457d6ddf25e313f23fb6578c41c
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
 
-PODFILE CHECKSUM: 51c5bb4ca1254154d5620344fb6573e2cb4c7764
+PODFILE CHECKSUM: 16e7dae68dfebcb60fca5b587d0ee629d7e8b4db
 
 COCOAPODS: 1.5.3

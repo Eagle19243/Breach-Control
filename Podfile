@@ -6,10 +6,10 @@ target 'Breach Control' do
   use_frameworks!
 
   # Pods for Breach Control
-  pod 'Alamofire', '~> 4.3.0'
+  pod 'Alamofire', '~> 5.0.0-beta.2'
   pod 'MBProgressHUD'
   pod 'UITextView+Placeholder', '~> 1.2'
-  pod 'IQKeyboardManagerSwift', '~> 5.0.0'
+  pod 'IQKeyboardManagerSwift', '~> 6.0.0'
 
   target 'Breach ControlTests' do
     inherit! :search_paths
