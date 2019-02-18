@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78CA94D7D0046358ED59D913 /* Pods_Breach_Control.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40720D3C1C200102A2D3277B /* Pods_Breach_Control.framework */; };
 		84A119FD2219D104002F81D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A119FC2219D104002F81D1 /* AppDelegate.swift */; };
 		84A119FF2219D104002F81D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A119FE2219D104002F81D1 /* ViewController.swift */; };
 		84A11A022219D104002F81D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A11A002219D104002F81D1 /* Main.storyboard */; };
@@ -16,9 +17,10 @@
 		84DD4B2E221AE6C200B00EE1 /* BCGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD4B2D221AE6C200B00EE1 /* BCGlobal.swift */; };
 		84DD4B30221AE6E400B00EE1 /* BCConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD4B2F221AE6E400B00EE1 /* BCConstants.swift */; };
 		84DD4B32221AE6F700B00EE1 /* BCAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD4B31221AE6F700B00EE1 /* BCAPIManager.swift */; };
-		84DD4B34221AE73600B00EE1 /* BCBaseVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD4B33221AE73600B00EE1 /* BCBaseVCViewController.swift */; };
+		84DD4B34221AE73600B00EE1 /* BCBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD4B33221AE73600B00EE1 /* BCBaseVC.swift */; };
 		84DD4B36221AE78C00B00EE1 /* BCBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD4B35221AE78C00B00EE1 /* BCBaseView.swift */; };
 		84DD4B38221AE7A100B00EE1 /* BCBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD4B37221AE7A100B00EE1 /* BCBaseModel.swift */; };
+		DEAAA7E09C68709F6F98AE91 /* Pods_Breach_ControlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5808DB5264198A42CA940378 /* Pods_Breach_ControlTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40720D3C1C200102A2D3277B /* Pods_Breach_Control.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Breach_Control.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5808DB5264198A42CA940378 /* Pods_Breach_ControlTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Breach_ControlTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		763BC14C6A799699B6328B4C /* Pods-Breach Control.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Breach Control.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Breach Control/Pods-Breach Control.debug.xcconfig"; sourceTree = "<group>"; };
+		7CDED9A6619032B163C95B73 /* Pods-Breach ControlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Breach ControlTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Breach ControlTests/Pods-Breach ControlTests.release.xcconfig"; sourceTree = "<group>"; };
 		84A119F92219D104002F81D1 /* Breach Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Breach Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A119FC2219D104002F81D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84A119FE2219D104002F81D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,9 +51,11 @@
 		84DD4B2D221AE6C200B00EE1 /* BCGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCGlobal.swift; sourceTree = "<group>"; };
 		84DD4B2F221AE6E400B00EE1 /* BCConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCConstants.swift; sourceTree = "<group>"; };
 		84DD4B31221AE6F700B00EE1 /* BCAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCAPIManager.swift; sourceTree = "<group>"; };
-		84DD4B33221AE73600B00EE1 /* BCBaseVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCBaseVCViewController.swift; sourceTree = "<group>"; };
+		84DD4B33221AE73600B00EE1 /* BCBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCBaseVC.swift; sourceTree = "<group>"; };
 		84DD4B35221AE78C00B00EE1 /* BCBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCBaseView.swift; sourceTree = "<group>"; };
 		84DD4B37221AE7A100B00EE1 /* BCBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCBaseModel.swift; sourceTree = "<group>"; };
+		BE583B35CA932ED665DD0BC5 /* Pods-Breach Control.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Breach Control.release.xcconfig"; path = "Pods/Target Support Files/Pods-Breach Control/Pods-Breach Control.release.xcconfig"; sourceTree = "<group>"; };
+		CCD3930C6A089DE6BE8DB06A /* Pods-Breach ControlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Breach ControlTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Breach ControlTests/Pods-Breach ControlTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78CA94D7D0046358ED59D913 /* Pods_Breach_Control.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,18 +71,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEAAA7E09C68709F6F98AE91 /* Pods_Breach_ControlTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BD78A115A50CEA97F07CFFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40720D3C1C200102A2D3277B /* Pods_Breach_Control.framework */,
+				5808DB5264198A42CA940378 /* Pods_Breach_ControlTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5CC8BBA3D3C0F2943F9FB315 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				763BC14C6A799699B6328B4C /* Pods-Breach Control.debug.xcconfig */,
+				BE583B35CA932ED665DD0BC5 /* Pods-Breach Control.release.xcconfig */,
+				CCD3930C6A089DE6BE8DB06A /* Pods-Breach ControlTests.debug.xcconfig */,
+				7CDED9A6619032B163C95B73 /* Pods-Breach ControlTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		84A119F02219D104002F81D1 = {
 			isa = PBXGroup;
 			children = (
 				84A119FB2219D104002F81D1 /* Breach Control */,
 				84A11A132219D106002F81D1 /* Breach ControlTests */,
 				84A119FA2219D104002F81D1 /* Products */,
+				5CC8BBA3D3C0F2943F9FB315 /* Pods */,
+				2BD78A115A50CEA97F07CFFB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,7 +205,7 @@
 		84DD4B28221AE5F500B00EE1 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				84DD4B33221AE73600B00EE1 /* BCBaseVCViewController.swift */,
+				84DD4B33221AE73600B00EE1 /* BCBaseVC.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -201,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84A11A192219D106002F81D1 /* Build configuration list for PBXNativeTarget "Breach Control" */;
 			buildPhases = (
+				35D8E7B33C4B561CEAE01E20 /* [CP] Check Pods Manifest.lock */,
 				84A119F52219D104002F81D1 /* Sources */,
 				84A119F62219D104002F81D1 /* Frameworks */,
 				84A119F72219D104002F81D1 /* Resources */,
+				DF279299462578CC94EEA74F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -218,6 +252,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84A11A1C2219D106002F81D1 /* Build configuration list for PBXNativeTarget "Breach ControlTests" */;
 			buildPhases = (
+				D5859FB7C9A4E36CE0427BAC /* [CP] Check Pods Manifest.lock */,
 				84A11A0C2219D106002F81D1 /* Sources */,
 				84A11A0D2219D106002F81D1 /* Frameworks */,
 				84A11A0E2219D106002F81D1 /* Resources */,
@@ -290,6 +325,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		35D8E7B33C4B561CEAE01E20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Breach Control-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5859FB7C9A4E36CE0427BAC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Breach ControlTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF279299462578CC94EEA74F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Breach Control/Pods-Breach Control-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Breach Control/Pods-Breach Control-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84A119F52219D104002F81D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -302,7 +412,7 @@
 				84DD4B30221AE6E400B00EE1 /* BCConstants.swift in Sources */,
 				84DD4B38221AE7A100B00EE1 /* BCBaseModel.swift in Sources */,
 				84A119FD2219D104002F81D1 /* AppDelegate.swift in Sources */,
-				84DD4B34221AE73600B00EE1 /* BCBaseVCViewController.swift in Sources */,
+				84DD4B34221AE73600B00EE1 /* BCBaseVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +572,7 @@
 		};
 		84A11A1A2219D106002F81D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 763BC14C6A799699B6328B4C /* Pods-Breach Control.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -471,7 +582,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.silentquadrant.Breach-Control";
+				PRODUCT_BUNDLE_IDENTIFIER = com.silentquadrant.breachcontrol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -480,6 +591,7 @@
 		};
 		84A11A1B2219D106002F81D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE583B35CA932ED665DD0BC5 /* Pods-Breach Control.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -489,7 +601,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.silentquadrant.Breach-Control";
+				PRODUCT_BUNDLE_IDENTIFIER = com.silentquadrant.breachcontrol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -498,6 +610,7 @@
 		};
 		84A11A1D2219D106002F81D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCD3930C6A089DE6BE8DB06A /* Pods-Breach ControlTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -519,6 +632,7 @@
 		};
 		84A11A1E2219D106002F81D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CDED9A6619032B163C95B73 /* Pods-Breach ControlTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
