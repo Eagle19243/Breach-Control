@@ -8,15 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		78CA94D7D0046358ED59D913 /* Pods_Breach_Control.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40720D3C1C200102A2D3277B /* Pods_Breach_Control.framework */; };
-		841F8E73221CE6B300AAF9A4 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F8E72221CE6B300AAF9A4 /* HomeVC.swift */; };
-		841F8E7D221D044200AAF9A4 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F8E7C221D044200AAF9A4 /* AboutVC.swift */; };
-		841F8E7F221D046E00AAF9A4 /* BreachesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F8E7E221D046E00AAF9A4 /* BreachesVC.swift */; };
+		841F8E73221CE6B300AAF9A4 /* BCHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F8E72221CE6B300AAF9A4 /* BCHomeVC.swift */; };
+		841F8E7D221D044200AAF9A4 /* BCAboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F8E7C221D044200AAF9A4 /* BCAboutVC.swift */; };
+		841F8E7F221D046E00AAF9A4 /* BCBreachesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F8E7E221D046E00AAF9A4 /* BCBreachesVC.swift */; };
+		8466AAA0221D349700975C9E /* BCBreachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466AA9F221D349700975C9E /* BCBreachCell.swift */; };
 		84A119FD2219D104002F81D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A119FC2219D104002F81D1 /* AppDelegate.swift */; };
 		84A11A022219D104002F81D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A11A002219D104002F81D1 /* Main.storyboard */; };
 		84A11A072219D106002F81D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A11A062219D106002F81D1 /* Assets.xcassets */; };
 		84A11A152219D106002F81D1 /* Breach_ControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A11A142219D106002F81D1 /* Breach_ControlTests.swift */; };
-		84AD8582221CD275009B7A7E /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD8581221CD275009B7A7E /* LaunchVC.swift */; };
-		84AD8586221CD399009B7A7E /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD8585221CD399009B7A7E /* MainVC.swift */; };
+		84AD8582221CD275009B7A7E /* BCLaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD8581221CD275009B7A7E /* BCLaunchVC.swift */; };
+		84AD8586221CD399009B7A7E /* BCMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD8585221CD399009B7A7E /* BCMainVC.swift */; };
 		84DD4B2E221AE6C200B00EE1 /* BCGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD4B2D221AE6C200B00EE1 /* BCGlobal.swift */; };
 		84DD4B30221AE6E400B00EE1 /* BCConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD4B2F221AE6E400B00EE1 /* BCConstants.swift */; };
 		84DD4B32221AE6F700B00EE1 /* BCAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD4B31221AE6F700B00EE1 /* BCAPIManager.swift */; };
@@ -41,9 +42,10 @@
 		5808DB5264198A42CA940378 /* Pods_Breach_ControlTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Breach_ControlTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		763BC14C6A799699B6328B4C /* Pods-Breach Control.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Breach Control.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Breach Control/Pods-Breach Control.debug.xcconfig"; sourceTree = "<group>"; };
 		7CDED9A6619032B163C95B73 /* Pods-Breach ControlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Breach ControlTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Breach ControlTests/Pods-Breach ControlTests.release.xcconfig"; sourceTree = "<group>"; };
-		841F8E72221CE6B300AAF9A4 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		841F8E7C221D044200AAF9A4 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
-		841F8E7E221D046E00AAF9A4 /* BreachesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreachesVC.swift; sourceTree = "<group>"; };
+		841F8E72221CE6B300AAF9A4 /* BCHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCHomeVC.swift; sourceTree = "<group>"; };
+		841F8E7C221D044200AAF9A4 /* BCAboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCAboutVC.swift; sourceTree = "<group>"; };
+		841F8E7E221D046E00AAF9A4 /* BCBreachesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCBreachesVC.swift; sourceTree = "<group>"; };
+		8466AA9F221D349700975C9E /* BCBreachCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCBreachCell.swift; sourceTree = "<group>"; };
 		84A119F92219D104002F81D1 /* Breach Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Breach Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A119FC2219D104002F81D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84A11A012219D104002F81D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,8 +54,8 @@
 		84A11A102219D106002F81D1 /* Breach ControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Breach ControlTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A11A142219D106002F81D1 /* Breach_ControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breach_ControlTests.swift; sourceTree = "<group>"; };
 		84A11A162219D106002F81D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84AD8581221CD275009B7A7E /* LaunchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
-		84AD8585221CD399009B7A7E /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		84AD8581221CD275009B7A7E /* BCLaunchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCLaunchVC.swift; sourceTree = "<group>"; };
+		84AD8585221CD399009B7A7E /* BCMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCMainVC.swift; sourceTree = "<group>"; };
 		84DD4B2D221AE6C200B00EE1 /* BCGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCGlobal.swift; sourceTree = "<group>"; };
 		84DD4B2F221AE6E400B00EE1 /* BCConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCConstants.swift; sourceTree = "<group>"; };
 		84DD4B31221AE6F700B00EE1 /* BCAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCAPIManager.swift; sourceTree = "<group>"; };
@@ -202,11 +204,11 @@
 			isa = PBXGroup;
 			children = (
 				84DD4B28221AE5F500B00EE1 /* Base */,
-				84AD8581221CD275009B7A7E /* LaunchVC.swift */,
-				84AD8585221CD399009B7A7E /* MainVC.swift */,
-				841F8E72221CE6B300AAF9A4 /* HomeVC.swift */,
-				841F8E7C221D044200AAF9A4 /* AboutVC.swift */,
-				841F8E7E221D046E00AAF9A4 /* BreachesVC.swift */,
+				84AD8581221CD275009B7A7E /* BCLaunchVC.swift */,
+				84AD8585221CD399009B7A7E /* BCMainVC.swift */,
+				841F8E72221CE6B300AAF9A4 /* BCHomeVC.swift */,
+				841F8E7C221D044200AAF9A4 /* BCAboutVC.swift */,
+				841F8E7E221D046E00AAF9A4 /* BCBreachesVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				84DD4B2A221AE5F500B00EE1 /* Base */,
+				8466AA9F221D349700975C9E /* BCBreachCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -415,15 +418,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8466AAA0221D349700975C9E /* BCBreachCell.swift in Sources */,
 				84DD4B2E221AE6C200B00EE1 /* BCGlobal.swift in Sources */,
-				841F8E73221CE6B300AAF9A4 /* HomeVC.swift in Sources */,
+				841F8E73221CE6B300AAF9A4 /* BCHomeVC.swift in Sources */,
 				84DD4B32221AE6F700B00EE1 /* BCAPIManager.swift in Sources */,
 				84DD4B36221AE78C00B00EE1 /* BCBaseView.swift in Sources */,
 				84DD4B30221AE6E400B00EE1 /* BCConstants.swift in Sources */,
-				84AD8586221CD399009B7A7E /* MainVC.swift in Sources */,
-				841F8E7F221D046E00AAF9A4 /* BreachesVC.swift in Sources */,
-				84AD8582221CD275009B7A7E /* LaunchVC.swift in Sources */,
-				841F8E7D221D044200AAF9A4 /* AboutVC.swift in Sources */,
+				84AD8586221CD399009B7A7E /* BCMainVC.swift in Sources */,
+				841F8E7F221D046E00AAF9A4 /* BCBreachesVC.swift in Sources */,
+				84AD8582221CD275009B7A7E /* BCLaunchVC.swift in Sources */,
+				841F8E7D221D044200AAF9A4 /* BCAboutVC.swift in Sources */,
 				84DD4B38221AE7A100B00EE1 /* BCBaseModel.swift in Sources */,
 				84A119FD2219D104002F81D1 /* AppDelegate.swift in Sources */,
 				84DD4B34221AE73600B00EE1 /* BCBaseVC.swift in Sources */,

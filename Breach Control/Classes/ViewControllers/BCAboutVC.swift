@@ -1,5 +1,5 @@
 //
-//  AboutVC.swift
+//  BCAboutVC.swift
 //  Breach Control
 //
 //  Created by naga on 2/19/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AboutVC: BCBaseVC {
+class BCAboutVC: BCBaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()

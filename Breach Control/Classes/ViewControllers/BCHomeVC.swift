@@ -1,5 +1,5 @@
 //
-//  HomeVC.swift
+//  BCHomeVC.swift
 //  Breach Control
 //
 //  Created by naga on 2/19/19.
@@ -9,7 +9,7 @@
 import UIKit
 import MBProgressHUD
 
-class HomeVC: BCBaseVC {
+class BCHomeVC: BCBaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +27,17 @@ class HomeVC: BCBaseVC {
         
     }
     
+    func editEmail() {
+        
+    }
+    
     // MARK: - Actions
     
     @IBAction func spyglassButtonTouchUpInside(_ sender: Any) {
         let alert  = UIAlertController(title: "Email Address", message: "Enter an email address to be monitored", preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Email"
+            textField.keyboardType = UIKeyboardType.emailAddress
         }
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
             self.monitorEmail(email: alert.textFields![0].text ?? "")

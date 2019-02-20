@@ -1,5 +1,5 @@
 //
-//  LaunchVC.swift
+//  BCLaunchVC.swift
 //  Breach Control
 //
 //  Created by naga on 2/19/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LaunchVC: BCBaseVC {
+class BCLaunchVC: BCBaseVC {
 
     
     @IBOutlet weak var logoImageView: UIImageView!
@@ -30,7 +30,7 @@ class LaunchVC: BCBaseVC {
     }
     
     @objc func gotoMainVC() {
-        let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainVC") as! MainVC
+        let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "BCMainVC") as! BCMainVC
         show(mainVC, sender: self)
     }
 }
