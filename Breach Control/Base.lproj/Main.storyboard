@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jF4-3s-D89">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gAf-LH-pRk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--About-->
         <scene sceneID="vKx-vW-Sgu">
             <objects>
-                <viewController id="Nu4-1a-FWt" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutVC" id="Nu4-1a-FWt" customClass="AboutVC" customModule="Breach_Control" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ldh-fM-6am">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,10 @@
                                             <constraint firstAttribute="width" constant="25" id="EMf-70-uvB"/>
                                             <constraint firstAttribute="width" secondItem="6aP-eD-0tc" secondAttribute="height" multiplier="1:1" id="xsh-Xl-qmq"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="close"/>
+                                        <state key="normal" image="close"/>
+                                        <connections>
+                                            <action selector="closeButtonTouchUpInside:" destination="Nu4-1a-FWt" eventType="touchUpInside" id="qlY-Mm-baM"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hH-NS-HK8">
                                         <rect key="frame" x="20" y="60" width="50" height="20.5"/>
@@ -132,7 +135,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="y5B-rG-5il"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About" image="about" id="oZ5-pU-q9H">
+                    <tabBarItem key="tabBarItem" tag="1" title="About" image="about" id="oZ5-pU-q9H">
                         <inset key="imageInsets" minX="2" minY="2" maxX="2" maxY="2"/>
                     </tabBarItem>
                 </viewController>
@@ -143,7 +146,7 @@
         <!--Breaches-->
         <scene sceneID="QBC-jV-9RO">
             <objects>
-                <viewController id="5qj-iP-yLH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BreachesVC" id="5qj-iP-yLH" customClass="BreachesVC" customModule="Breach_Control" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5h3-D5-fmA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,7 +160,10 @@
                                             <constraint firstAttribute="width" constant="25" id="LCo-d9-oJJ"/>
                                             <constraint firstAttribute="width" secondItem="DSh-A2-OO9" secondAttribute="height" multiplier="1:1" id="eXU-Mw-mkZ"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="close"/>
+                                        <state key="normal" image="close"/>
+                                        <connections>
+                                            <action selector="closeButtonTouchUpInside:" destination="5qj-iP-yLH" eventType="touchUpInside" id="1SW-Ct-UFA"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breaches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyn-yc-V7q">
                                         <rect key="frame" x="20" y="60" width="77" height="20.5"/>
@@ -223,7 +229,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vUv-rF-kZf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Breaches" image="breaches" id="7Uh-PS-D4z">
+                    <tabBarItem key="tabBarItem" tag="2" title="Breaches" image="breaches" badgeValue="2" id="7Uh-PS-D4z">
                         <inset key="imageInsets" minX="2" minY="2" maxX="2" maxY="2"/>
                     </tabBarItem>
                 </viewController>
@@ -234,7 +240,7 @@
         <!--Home-->
         <scene sceneID="jZi-J9-1b6">
             <objects>
-                <viewController id="sge-xm-ViV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="sge-xm-ViV" customClass="HomeVC" customModule="Breach_Control" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zHa-o1-Dhj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -258,6 +264,9 @@
                                     <constraint firstAttribute="width" secondItem="eEH-Rr-2to" secondAttribute="height" multiplier="1:1" id="xAV-q9-GL9"/>
                                 </constraints>
                                 <state key="normal" image="spyglass"/>
+                                <connections>
+                                    <action selector="spyglassButtonTouchUpInside:" destination="sge-xm-ViV" eventType="touchUpInside" id="hbd-U7-vdr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -280,10 +289,52 @@
             </objects>
             <point key="canvasLocation" x="-1383.2" y="716.49175412293857"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--LaunchVC-->
+        <scene sceneID="d8O-GM-quZ">
+            <objects>
+                <viewController id="gAf-LH-pRk" customClass="LaunchVC" customModule="Breach_Control" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Edf-QZ-lvD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="silent_quadrant" translatesAutoresizingMaskIntoConstraints="NO" id="AlF-OC-n0K">
+                                <rect key="frame" x="30" y="220" width="315" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="77q-mW-idV"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spyglass" translatesAutoresizingMaskIntoConstraints="NO" id="SFk-ja-w91">
+                                <rect key="frame" x="162.5" y="295" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Ein-3B-Id1"/>
+                                    <constraint firstAttribute="width" secondItem="SFk-ja-w91" secondAttribute="height" multiplier="1:1" id="ZrB-zY-roh"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="AlF-OC-n0K" firstAttribute="leading" secondItem="HOi-CD-nPi" secondAttribute="leading" constant="30" id="5tR-MH-CjA"/>
+                            <constraint firstItem="AlF-OC-n0K" firstAttribute="top" secondItem="HOi-CD-nPi" secondAttribute="top" constant="200" id="DP0-oU-iv5"/>
+                            <constraint firstItem="SFk-ja-w91" firstAttribute="top" secondItem="AlF-OC-n0K" secondAttribute="bottom" constant="35" id="WYL-2Y-uqj"/>
+                            <constraint firstItem="HOi-CD-nPi" firstAttribute="trailing" secondItem="AlF-OC-n0K" secondAttribute="trailing" constant="30" id="lqI-Fk-GbO"/>
+                            <constraint firstItem="SFk-ja-w91" firstAttribute="width" secondItem="SFk-ja-w91" secondAttribute="height" multiplier="1:1" id="u4k-nm-t6D"/>
+                            <constraint firstItem="SFk-ja-w91" firstAttribute="centerX" secondItem="HOi-CD-nPi" secondAttribute="centerX" id="z32-kt-zkY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HOi-CD-nPi"/>
+                    </view>
+                    <connections>
+                        <outlet property="logoImageView" destination="AlF-OC-n0K" id="Ptg-k7-ejI"/>
+                        <outlet property="spyglassImageView" destination="SFk-ja-w91" id="GXi-nF-YXg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D09-fB-o0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-656" y="-732"/>
+        </scene>
+        <!--MainVC-->
         <scene sceneID="rSg-Nt-F2d">
             <objects>
-                <tabBarController id="jF4-3s-D89" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainVC" id="jF4-3s-D89" customClass="MainVC" customModule="Breach_Control" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kd0-dm-Xll">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
