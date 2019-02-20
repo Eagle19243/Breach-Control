@@ -8,15 +8,20 @@
 
 import UIKit
 
-class BCBreachesVC: BCBaseVC, UITableViewDelegate, UITableViewDataSource {
+class BCBreachesVC: BCBaseVC {
 
-    @IBOutlet weak var tableView: UITableView!
-    let emails = ["test1@gmail.com", "test2@gmail.com"]
+    @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var detailHeaderView: UIView!
+    @IBOutlet fileprivate weak var tblBreaches: UITableView!
+    
+    fileprivate var emails: [String] = ["test1@gmail.com", "test2@gmail.com"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        detailView.layer.position.x = self.view.frame.width * 2
+        // TapGestureRecognizer
+        detailHeaderView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideDetailView)))
     }
 
     // MARK: - Actions
@@ -25,7 +30,17 @@ class BCBreachesVC: BCBaseVC, UITableViewDelegate, UITableViewDataSource {
         self.dismiss(animated: true, completion: nil)
     }
     
-    // MARK: - Delegate
+    @objc func hideDetailView() {
+        UIView.animate(withDuration: 0.5,
+                       animations: {
+            self.tblBreaches.layer.position.x = self.view.frame.width / 2
+            self.detailView.layer.position.x = self.view.frame.width * 2
+        })
+    }
+    
+}
+
+extension BCBreachesVC: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -36,9 +51,16 @@ class BCBreachesVC: BCBaseVC, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BCBreachCell", for: indexPath) as! BCBreachCell
-        cell.emailLabel.text = emails[indexPath.row]
+        cell.email = emails[indexPath.row]
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.5,
+                       animations: {
+            self.tblBreaches.layer.position.x = -self.view.frame.width / 2
+            self.detailView.layer.position.x = self.view.frame.width / 2
+        })
+    }
 }

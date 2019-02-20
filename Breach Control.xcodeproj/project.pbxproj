@@ -11,6 +11,7 @@
 		841F8E73221CE6B300AAF9A4 /* BCHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F8E72221CE6B300AAF9A4 /* BCHomeVC.swift */; };
 		841F8E7D221D044200AAF9A4 /* BCAboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F8E7C221D044200AAF9A4 /* BCAboutVC.swift */; };
 		841F8E7F221D046E00AAF9A4 /* BCBreachesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F8E7E221D046E00AAF9A4 /* BCBreachesVC.swift */; };
+		845AE26C221DD812008B4DBE /* BCEmailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AE26B221DD812008B4DBE /* BCEmailCell.swift */; };
 		8466AAA0221D349700975C9E /* BCBreachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466AA9F221D349700975C9E /* BCBreachCell.swift */; };
 		84A119FD2219D104002F81D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A119FC2219D104002F81D1 /* AppDelegate.swift */; };
 		84A11A022219D104002F81D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A11A002219D104002F81D1 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		841F8E72221CE6B300AAF9A4 /* BCHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCHomeVC.swift; sourceTree = "<group>"; };
 		841F8E7C221D044200AAF9A4 /* BCAboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCAboutVC.swift; sourceTree = "<group>"; };
 		841F8E7E221D046E00AAF9A4 /* BCBreachesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCBreachesVC.swift; sourceTree = "<group>"; };
+		845AE26B221DD812008B4DBE /* BCEmailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCEmailCell.swift; sourceTree = "<group>"; };
 		8466AA9F221D349700975C9E /* BCBreachCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCBreachCell.swift; sourceTree = "<group>"; };
 		84A119F92219D104002F81D1 /* Breach Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Breach Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A119FC2219D104002F81D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				84DD4B2A221AE5F500B00EE1 /* Base */,
 				8466AA9F221D349700975C9E /* BCBreachCell.swift */,
+				845AE26B221DD812008B4DBE /* BCEmailCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 		84A119F12219D104002F81D1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = BC;
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Silent Quadrant";
@@ -419,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8466AAA0221D349700975C9E /* BCBreachCell.swift in Sources */,
+				845AE26C221DD812008B4DBE /* BCEmailCell.swift in Sources */,
 				84DD4B2E221AE6C200B00EE1 /* BCGlobal.swift in Sources */,
 				841F8E73221CE6B300AAF9A4 /* BCHomeVC.swift in Sources */,
 				84DD4B32221AE6F700B00EE1 /* BCAPIManager.swift in Sources */,
@@ -586,8 +591,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZSFX78H3ZT;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = M65JJ48AX6;
 				INFOPLIST_FILE = "Breach Control/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -596,7 +601,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.silentquadrant.breachcontrol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "BreachControl-dev0220";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -607,9 +612,9 @@
 			baseConfigurationReference = BE583B35CA932ED665DD0BC5 /* Pods-Breach Control.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZSFX78H3ZT;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = M65JJ48AX6;
 				INFOPLIST_FILE = "Breach Control/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -618,7 +623,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.silentquadrant.breachcontrol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "BreachControl-appstore0220";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

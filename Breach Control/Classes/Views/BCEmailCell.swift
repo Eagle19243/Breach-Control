@@ -1,14 +1,14 @@
 //
-//  BCBreachCell.swift
+//  BCEmailCell.swift
 //  Breach Control
 //
-//  Created by naga on 2/19/19.
+//  Created by naga on 2/20/19.
 //  Copyright © 2019 Silent Quadrant. All rights reserved.
 //
 
 import UIKit
 
-class BCBreachCell: UITableViewCell {
+class BCEmailCell: UITableViewCell {
 
     @IBOutlet private weak var txtEmail: UILabel!
     
