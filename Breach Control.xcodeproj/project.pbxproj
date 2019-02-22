@@ -13,6 +13,8 @@
 		841F8E7F221D046E00AAF9A4 /* BCBreachesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F8E7E221D046E00AAF9A4 /* BCBreachesVC.swift */; };
 		845AE26C221DD812008B4DBE /* BCEmailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AE26B221DD812008B4DBE /* BCEmailCell.swift */; };
 		8466AAA0221D349700975C9E /* BCBreachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466AA9F221D349700975C9E /* BCBreachCell.swift */; };
+		848B52B9222074EB00E1FA06 /* BCEmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B52B8222074EB00E1FA06 /* BCEmailModel.swift */; };
+		848B52BB22207A4E00E1FA06 /* BCNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B52BA22207A4E00E1FA06 /* BCNotificationModel.swift */; };
 		84A119FD2219D104002F81D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A119FC2219D104002F81D1 /* AppDelegate.swift */; };
 		84A11A022219D104002F81D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A11A002219D104002F81D1 /* Main.storyboard */; };
 		84A11A072219D106002F81D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A11A062219D106002F81D1 /* Assets.xcassets */; };
@@ -46,8 +48,11 @@
 		841F8E72221CE6B300AAF9A4 /* BCHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCHomeVC.swift; sourceTree = "<group>"; };
 		841F8E7C221D044200AAF9A4 /* BCAboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCAboutVC.swift; sourceTree = "<group>"; };
 		841F8E7E221D046E00AAF9A4 /* BCBreachesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCBreachesVC.swift; sourceTree = "<group>"; };
+		842D7346221FD291000BC659 /* Breach Control.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Breach Control.entitlements"; sourceTree = "<group>"; };
 		845AE26B221DD812008B4DBE /* BCEmailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCEmailCell.swift; sourceTree = "<group>"; };
 		8466AA9F221D349700975C9E /* BCBreachCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCBreachCell.swift; sourceTree = "<group>"; };
+		848B52B8222074EB00E1FA06 /* BCEmailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCEmailModel.swift; sourceTree = "<group>"; };
+		848B52BA22207A4E00E1FA06 /* BCNotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCNotificationModel.swift; sourceTree = "<group>"; };
 		84A119F92219D104002F81D1 /* Breach Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Breach Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A119FC2219D104002F81D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84A11A012219D104002F81D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,6 +136,7 @@
 		84A119FB2219D104002F81D1 /* Breach Control */ = {
 			isa = PBXGroup;
 			children = (
+				842D7346221FD291000BC659 /* Breach Control.entitlements */,
 				84A119FC2219D104002F81D1 /* AppDelegate.swift */,
 				84A11A062219D106002F81D1 /* Assets.xcassets */,
 				84A11A002219D104002F81D1 /* Main.storyboard */,
@@ -190,6 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				84DD4B26221AE5F500B00EE1 /* Base */,
+				848B52B8222074EB00E1FA06 /* BCEmailModel.swift */,
+				848B52BA22207A4E00E1FA06 /* BCNotificationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,6 +303,14 @@
 				TargetAttributes = {
 					84A119F82219D104002F81D1 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					84A11A0F2219D106002F81D1 = {
 						CreatedOnToolsVersion = 10.1;
@@ -395,9 +411,11 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Breach Control/Pods-Breach Control-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/EasyAnimation/EasyAnimation.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -405,9 +423,11 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyAnimation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8466AAA0221D349700975C9E /* BCBreachCell.swift in Sources */,
+				848B52BB22207A4E00E1FA06 /* BCNotificationModel.swift in Sources */,
 				845AE26C221DD812008B4DBE /* BCEmailCell.swift in Sources */,
 				84DD4B2E221AE6C200B00EE1 /* BCGlobal.swift in Sources */,
 				841F8E73221CE6B300AAF9A4 /* BCHomeVC.swift in Sources */,
@@ -432,6 +453,7 @@
 				84AD8586221CD399009B7A7E /* BCMainVC.swift in Sources */,
 				841F8E7F221D046E00AAF9A4 /* BCBreachesVC.swift in Sources */,
 				84AD8582221CD275009B7A7E /* BCLaunchVC.swift in Sources */,
+				848B52B9222074EB00E1FA06 /* BCEmailModel.swift in Sources */,
 				841F8E7D221D044200AAF9A4 /* BCAboutVC.swift in Sources */,
 				84DD4B38221AE7A100B00EE1 /* BCBaseModel.swift in Sources */,
 				84A119FD2219D104002F81D1 /* AppDelegate.swift in Sources */,
@@ -590,18 +612,19 @@
 			baseConfigurationReference = 763BC14C6A799699B6328B4C /* Pods-Breach Control.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Breach Control/Breach Control.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = M65JJ48AX6;
 				INFOPLIST_FILE = "Breach Control/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.silentquadrant.breachcontrol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "BreachControl-dev0220";
+				PROVISIONING_PROFILE_SPECIFIER = "BreachControl-dev0221";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -612,18 +635,19 @@
 			baseConfigurationReference = BE583B35CA932ED665DD0BC5 /* Pods-Breach Control.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Breach Control/Breach Control.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = M65JJ48AX6;
 				INFOPLIST_FILE = "Breach Control/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.silentquadrant.breachcontrol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "BreachControl-appstore0220";
+				PROVISIONING_PROFILE_SPECIFIER = "BreachControl-appstore0221";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

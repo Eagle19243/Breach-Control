@@ -11,6 +11,7 @@ target 'Breach Control' do
   pod 'UITextView+Placeholder', '~> 1.2'
   pod 'IQKeyboardManagerSwift', '~> 6.0.0'
   pod 'EasyAnimation'
+  pod 'Parse'
 
   target 'Breach ControlTests' do
     inherit! :search_paths

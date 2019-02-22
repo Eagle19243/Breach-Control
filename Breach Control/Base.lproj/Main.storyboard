@@ -324,7 +324,7 @@ Compromised data: Email addresses, Passwords</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vUv-rF-kZf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Breaches" image="breaches" badgeValue="2" id="7Uh-PS-D4z"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Breaches" image="breaches" id="7Uh-PS-D4z"/>
                     <connections>
                         <outlet property="detailHeaderView" destination="Xup-Gw-UVH" id="gXR-WP-eFk"/>
                         <outlet property="detailView" destination="gFj-BP-JAe" id="SNl-AP-QFT"/>
