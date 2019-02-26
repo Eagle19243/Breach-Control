@@ -21,6 +21,19 @@ class BCBreachDetailCell: UITableViewCell {
         }
     }
     
+    var is_read: Bool? {
+        set {
+            if newValue == true {
+                txtDesc.font = UIFont.systemFont(ofSize: 13.0)
+            } else {
+                txtDesc.font = UIFont.boldSystemFont(ofSize: 13.0)
+            }
+        }
+        get {
+            return txtDesc.font == UIFont.systemFont(ofSize: 13.0)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

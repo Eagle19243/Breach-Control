@@ -9,12 +9,10 @@
 import UIKit
 import MBProgressHUD
 
-class BCMainVC: UITabBarController, UITabBarControllerDelegate {
+class BCMainVC: UITabBarController, UITabBarControllerDelegate, BCBreachesVCDelegate, BCHomeVCDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.delegate = self
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
@@ -22,8 +20,13 @@ class BCMainVC: UITabBarController, UITabBarControllerDelegate {
             if let objects = objects {
                 emails = objects
                 var count_unread_breaches = 0
-                for index in 0...emails.count - 1 {
-                    BCAPIManager.shared.getBreachesForEmail(email: emails[index], is_read: false, completion: { (breaches, error) in
+                
+                if emails.count == 0 {
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                }
+                
+                for (index, email) in emails.enumerated() {
+                    BCAPIManager.shared.getBreachesForEmail(email: email, is_read: false, completion: { (breaches, error) in
                         if let breaches = breaches {
                             badge_counts.append(breaches.count)
                             count_unread_breaches += breaches.count
@@ -43,7 +46,9 @@ class BCMainVC: UITabBarController, UITabBarControllerDelegate {
             }
         }
         
-        
+        self.delegate = self
+        let homeVC = self.viewControllers![0] as! BCHomeVC
+        homeVC.delegate = self
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -52,8 +57,37 @@ class BCMainVC: UITabBarController, UITabBarControllerDelegate {
             self.present(aboutVC, animated: true, completion: nil)
         } else if item.tag == 2 {
             let breachesVC = self.storyboard?.instantiateViewController(withIdentifier: "BCBreachesVC") as! BCBreachesVC
+            breachesVC.delegate = self
             self.present(breachesVC, animated: true, completion: nil)
         }
+    }
+    
+    func resetBadge() {
+        var count_unread_breaches = 0
+        
+        for badge_count in badge_counts {
+            count_unread_breaches += badge_count
+        }
+        
+        if let tabItems = self.tabBar.items {
+            if count_unread_breaches > 0 {
+                tabItems[2].badgeValue = String(count_unread_breaches)
+            } else {
+                tabItems[2].badgeValue = nil
+            }
+        }
+    }
+    
+    // MARK: - BCBreachesVCDelegate
+    
+    func onCloseButtonTouchUpInside() {
+        self.resetBadge()
+    }
+    
+    // MARK: - BCHomeVCDelegate
+    
+    func onEmailsUpdated() {
+        self.resetBadge()
     }
     
     // MARK: - Delegate

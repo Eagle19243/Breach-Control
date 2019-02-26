@@ -13,7 +13,7 @@ import Parse
 class BCAPIManager: NSObject {
     static let shared = BCAPIManager()
     
-    func trigger(email: String) {
+    private func trigger(email: String, completion: @escaping (Int?, Error?) -> Void) {
         let headers = [
             "X-Parse-Application-Id" : ParseApplicationId,
             "X-Parse-REST-API-Key" : ParseRestAPIKey,
@@ -25,14 +25,37 @@ class BCAPIManager: NSObject {
         
         Alamofire.request(ParseServerURL + "functions/trigger", method: .post, parameters: params, encoding: URLEncoding.default, headers: headers)
             .responseJSON { (response) in
-                switch response.result {
-                case .success:
-                    if let json = response.result.value {
-                        print(json)
-                    }
-                    print("Succeed in API request")
-                case .failure:
-                    print("Failed in API request")
+            
+            self.getBreachesForEmail(email: email, is_read: nil, completion: { (breaches, error) in
+                if let error = error {
+                    completion(nil, error)
+                } else {
+                    completion(breaches?.count, nil)
+                }
+            })
+        }
+    }
+    
+    private func deleteBreachesByEmail(email: BCEmailModel, completion: @escaping (Bool, Error?) -> Void ) {
+        let query = PFQuery(className: "Breach")
+        query.whereKey("email", equalTo: email)
+        query.whereKey("device", equalTo: PFInstallation.current()!)
+        query.findObjectsInBackground { (objects, error) in
+            if let objects = objects {
+                for (index, object) in objects.enumerated() {
+                    object.deleteInBackground(block: { (success, error) in
+                        if let error = error {
+                            completion(false, error)
+                            return
+                        }
+                        
+                        if index == objects.count - 1 {
+                            completion(true, nil)
+                        }
+                    })
+                }
+            } else {
+                completion(false, error)
             }
         }
     }
@@ -56,27 +79,29 @@ class BCAPIManager: NSObject {
         }
     }
     
-    func addEmail(email: String, completion: @escaping (Bool, Error?) -> Void) {
+    func addEmail(email: String, completion: @escaping (Int?, Error?) -> Void) {
         let obj = BCEmailModel()
         obj.email = email
         obj.device = PFInstallation.current()
         obj.saveInBackground { (success, error) in
-            completion(success, error)
+            if let error = error {
+                completion(nil, error)
+            } else {
+                self.trigger(email: email, completion: { (count, error) in
+                    completion(count, error)
+                })
+            }
         }
     }
     
-    func updateEmail(oldEmail: String, newEmail: String, completion: @escaping (Bool, Error?) -> Void) {
-        let query = PFQuery(className: "Email")
-        query.whereKey("email", equalTo: oldEmail)
-        query.whereKey("device", equalTo: PFInstallation.current()!)
-        query.getFirstObjectInBackground { (obj, error) in
-            if let obj = obj as? BCEmailModel {
-                obj.email = newEmail
-                obj.saveInBackground(block: { (success, error) in
-                    completion(success, error)
-                })
+    func updateEmail(oldEmail: String, newEmail: String, completion: @escaping (Int?, Error?) -> Void) {
+        self.deleteEmail(email: oldEmail) { (success, error) in
+            if let error = error {
+                completion(nil, error)
             } else {
-                completion(false, error)
+                self.addEmail(email: newEmail, completion: { (count, error) in
+                    completion(count, error)
+                })
             }
         }
     }
@@ -88,7 +113,13 @@ class BCAPIManager: NSObject {
         query.getFirstObjectInBackground { (obj, error) in
             if let obj = obj {
                 obj.deleteInBackground(block: { (success, error) in
-                    completion(success, error)
+                    if let error = error {
+                        completion(false, error)
+                    } else if let obj_email = obj as? BCEmailModel {
+                        self.deleteBreachesByEmail(email: obj_email, completion: { (success, error) in
+                            completion(success, error)
+                        })
+                    }
                 })
             } else {
                 completion(false, error)
@@ -110,6 +141,7 @@ class BCAPIManager: NSObject {
                     query.whereKey("is_read", equalTo: is_read)
                 }
                 query.limit = 1000
+                query.addDescendingOrder("breach_date")
                 
                 query.findObjectsInBackground(block: { (objects, error) in
                     if let objects = objects {

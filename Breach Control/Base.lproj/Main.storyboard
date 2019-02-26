@@ -361,7 +361,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQN-vd-q5n">
                                                     <rect key="frame" x="313" y="17.5" width="20" height="20"/>
                                                     <subviews>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YO-4y-ZYT">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YO-4y-ZYT">
                                                             <rect key="frame" x="4" y="0.0" width="12" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -436,24 +436,22 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BCBreachDetailCell" rowHeight="250" id="wk9-HO-MZY" customClass="BCBreachDetailCell" customModule="Breach_Control" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="250"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BCBreachDetailCell" rowHeight="300" id="wk9-HO-MZY" customClass="BCBreachDetailCell" customModule="Breach_Control" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="300"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wk9-HO-MZY" id="Bl4-Hp-Lo0">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="description" translatesAutoresizingMaskIntoConstraints="NO" id="NwB-c6-Qwk">
-                                                            <rect key="frame" x="20" y="0.0" width="50" height="50"/>
+                                                            <rect key="frame" x="20" y="15" width="50" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="4md-dG-Yf6"/>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="7Vi-1n-rUi"/>
-                                                                <constraint firstAttribute="height" constant="50" id="Pbb-YN-fgp"/>
                                                                 <constraint firstAttribute="width" secondItem="NwB-c6-Qwk" secondAttribute="height" multiplier="1:1" id="aew-QT-f59"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsu-af-pHV">
-                                                            <rect key="frame" x="90" y="0.0" width="265" height="217.5"/>
+                                                            <rect key="frame" x="90" y="15" width="265" height="274.5"/>
                                                             <string key="text">Collection #1: In January 2019, a large collection of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.
 
 Compromised data: Email addresses, Passwords</string>
@@ -463,10 +461,11 @@ Compromised data: Email addresses, Passwords</string>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="NwB-c6-Qwk" firstAttribute="top" secondItem="Bl4-Hp-Lo0" secondAttribute="top" id="Tsa-yF-Shd"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Qsu-af-pHV" secondAttribute="bottom" constant="10" id="QDs-w7-UnX"/>
+                                                        <constraint firstItem="NwB-c6-Qwk" firstAttribute="top" secondItem="Bl4-Hp-Lo0" secondAttribute="top" constant="15" id="Tsa-yF-Shd"/>
                                                         <constraint firstAttribute="trailing" secondItem="Qsu-af-pHV" secondAttribute="trailing" constant="20" id="WG4-CJ-48f"/>
                                                         <constraint firstItem="Qsu-af-pHV" firstAttribute="leading" secondItem="NwB-c6-Qwk" secondAttribute="trailing" constant="20" id="hB5-7U-9n7"/>
-                                                        <constraint firstItem="Qsu-af-pHV" firstAttribute="top" secondItem="Bl4-Hp-Lo0" secondAttribute="top" id="mKh-Ms-q5Y"/>
+                                                        <constraint firstItem="Qsu-af-pHV" firstAttribute="top" secondItem="Bl4-Hp-Lo0" secondAttribute="top" constant="15" id="mKh-Ms-q5Y"/>
                                                         <constraint firstItem="NwB-c6-Qwk" firstAttribute="leading" secondItem="Bl4-Hp-Lo0" secondAttribute="leading" constant="20" id="ya0-F3-Xk1"/>
                                                     </constraints>
                                                 </tableViewCellContentView>

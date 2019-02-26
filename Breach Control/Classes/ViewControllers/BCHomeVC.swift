@@ -10,11 +10,16 @@ import UIKit
 import MBProgressHUD
 import Parse
 
+protocol BCHomeVCDelegate {
+    func onEmailsUpdated()
+}
+
 class BCHomeVC: BCBaseVC {
 
     @IBOutlet fileprivate weak var tblEmails: UITableView!
     
     fileprivate let spyglassHeight: CGFloat = 50
+    var delegate:BCHomeVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,15 +49,18 @@ class BCHomeVC: BCBaseVC {
         } else {
             if edited {
                 emails[row!] = email
-                BCAPIManager.shared.updateEmail(oldEmail: lastEmail!, newEmail: email) { (success, error) in
+                BCAPIManager.shared.updateEmail(oldEmail: lastEmail!, newEmail: email) { (count, error) in
+                    badge_counts[row!] = count ?? 0
+                    self.delegate?.onEmailsUpdated()
                 }
             } else {
                 emails.append(email)
-                BCAPIManager.shared.addEmail(email: email) { (success, error) in
+                BCAPIManager.shared.addEmail(email: email) { (count, error) in
+                    badge_counts.append(count ?? 0)
+                    self.delegate?.onEmailsUpdated()
                 }
             }
             
-            BCAPIManager.shared.trigger(email: email)
             tblEmails.reloadData()
             layoutTableView()
         }
@@ -129,7 +137,9 @@ extension BCHomeVC: UITableViewDataSource, UITableViewDelegate {
             }
             
             emails.remove(at: indexPath.row)
+            badge_counts.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            self.delegate?.onEmailsUpdated()
             layoutTableView()
         }
     }

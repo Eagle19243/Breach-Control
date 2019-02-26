@@ -10,6 +10,10 @@ import UIKit
 import MBProgressHUD
 import Parse
 
+protocol BCBreachesVCDelegate {
+    func onCloseButtonTouchUpInside()
+}
+
 class BCBreachesVC: BCBaseVC {
 
     @IBOutlet fileprivate weak var btnClose: UIButton!
@@ -19,15 +23,33 @@ class BCBreachesVC: BCBaseVC {
     @IBOutlet fileprivate weak var tblBreaches: UITableView!
     @IBOutlet fileprivate weak var tblDetails: UITableView!
     
+    var delegate:BCBreachesVCDelegate?
+    
     fileprivate var details: [BCBreachModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let topY = btnClose.frame.origin.y + 75.5
-        detailView.frame = CGRect(origin: CGPoint(x: 0, y: topY), size: CGSize(width: self.view.frame.width, height: self.view.frame.height - topY))
+        let screenSize = UIScreen.main.bounds.size
+        var topLayoutY: CGFloat = 0.0
+        
+        if #available(iOS 11.0, *) {
+            let window = UIApplication.shared.keyWindow
+            topLayoutY = window?.safeAreaInsets.top ?? 0.0
+        }
+        
+        let breachesRect = CGRect(x: 0,
+                                  y: topLayoutY + 95.5,
+                                  width: screenSize.width,
+                                  height: screenSize.height - topLayoutY - 95.5)
+        tblBreaches.frame = breachesRect
+        
+        detailView.frame = breachesRect
         detailView.layer.position.x = self.view.frame.width * 2
-        tblBreaches.frame = CGRect(origin: CGPoint(x: 0, y: topY), size: CGSize(width: self.view.frame.width, height: topY))
+        
+        tblDetails.rowHeight = UITableView.automaticDimension
+        tblDetails.estimatedRowHeight = 250
+        
         // TapGestureRecognizer
         detailHeaderView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideDetailView)))
         
@@ -37,7 +59,9 @@ class BCBreachesVC: BCBaseVC {
     // MARK: - Actions
     
     @IBAction func closeButtonTouchUpInside(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            self.delegate?.onCloseButtonTouchUpInside()
+        }
     }
     
     @objc func hideDetailView() {
@@ -78,10 +102,7 @@ extension BCBreachesVC: UITableViewDataSource, UITableViewDelegate {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BCBreachDetailCell", for: indexPath) as! BCBreachDetailCell
             cell.desc = details[indexPath.row].desc
-            
-            if !details[indexPath.row].is_read {
-                cell.layer.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 240/255, alpha: 1.0).cgColor
-            }
+            cell.is_read = details[indexPath.row].is_read
             
             return cell
         }
