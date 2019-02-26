@@ -1,22 +1,22 @@
 //
-//  BCNotificationModel.swift
+//  BCBreachModel.swift
 //  Breach Control
 //
-//  Created by naga on 2/22/19.
+//  Created by naga on 2/25/19.
 //  Copyright © 2019 Silent Quadrant. All rights reserved.
 //
 
 import UIKit
 import Parse
 
-class BCNotificationModel: PFObject, PFSubclassing {
+class BCBreachModel: PFObject, PFSubclassing {
     
     @NSManaged var desc: String
-    @NSManaged var is_read: Bool
     @NSManaged var email: PFObject
     @NSManaged var device: PFInstallation?
+    @NSManaged var is_read: Bool
     
     class func parseClassName() -> String {
-        return "Notification"
+        return "Breach"
     }
 }

@@ -6,8 +6,6 @@
 //  Copyright © 2019 Silent Quadrant. All rights reserved.
 //
 
-import UIKit
+var emails: [String] = []
+var badge_counts: [Int] = []
 
-class BCGlobal: NSObject {
-    
-}

@@ -2,7 +2,7 @@
 //  BCEmailModel.swift
 //  Breach Control
 //
-//  Created by admin on 2/22/19.
+//  Created by naga on 2/22/19.
 //  Copyright © 2019 Silent Quadrant. All rights reserved.
 //
 
@@ -16,10 +16,5 @@ class BCEmailModel: PFObject, PFSubclassing {
     
     class func parseClassName() -> String {
         return "Email"
-    }
-    
-    override init() {
-        super.init()
-        self.device = PFInstallation.current()
     }
 }

@@ -8,20 +8,31 @@
 
 import UIKit
 import MBProgressHUD
+import Parse
 
 class BCHomeVC: BCBaseVC {
 
     @IBOutlet fileprivate weak var tblEmails: UITableView!
     
     fileprivate let spyglassHeight: CGFloat = 50
-    fileprivate var emails: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
+        BCAPIManager.shared.getAllEmails { (objects, error) in
+            if let objects = objects {
+                emails = objects
+                self.tblEmails.reloadData()
+            }
+            MBProgressHUD.hide(for: self.view, animated: true)
+        }
+        
         layoutTableView()
     }
     
-    func monitorEmail(email: String, edited: Bool, row: Int?) {
+    func monitorEmail(email: String, edited: Bool, row: Int?, lastEmail: String?) {
         if email.isEmpty {
             let alert = UIAlertController(title: "Error", message: "Email address cannot be empty", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
@@ -33,10 +44,15 @@ class BCHomeVC: BCBaseVC {
         } else {
             if edited {
                 emails[row!] = email
+                BCAPIManager.shared.updateEmail(oldEmail: lastEmail!, newEmail: email) { (success, error) in
+                }
             } else {
                 emails.append(email)
+                BCAPIManager.shared.addEmail(email: email) { (success, error) in
+                }
             }
             
+            BCAPIManager.shared.trigger(email: email)
             tblEmails.reloadData()
             layoutTableView()
         }
@@ -50,7 +66,7 @@ class BCHomeVC: BCBaseVC {
             textField.keyboardType = UIKeyboardType.emailAddress
         }
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
-            self.monitorEmail(email: alert.textFields![0].text ?? "", edited: true, row: row)
+            self.monitorEmail(email: alert.textFields![0].text ?? "", edited: true, row: row, lastEmail: email)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
@@ -71,7 +87,7 @@ class BCHomeVC: BCBaseVC {
             textField.keyboardType = UIKeyboardType.emailAddress
         }
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
-            self.monitorEmail(email: alert.textFields![0].text ?? "", edited: false, row: nil)
+            self.monitorEmail(email: alert.textFields![0].text ?? "", edited: false, row: nil, lastEmail: nil)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
@@ -105,6 +121,17 @@ extension BCHomeVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         editEmail(email: emails[indexPath.row], row: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            BCAPIManager.shared.deleteEmail(email: emails[indexPath.row]) { (success, error) in
+            }
+            
+            emails.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            layoutTableView()
+        }
     }
     
     private func searchButton() -> UIButton {
