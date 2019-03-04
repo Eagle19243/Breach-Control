@@ -34,6 +34,8 @@ class BCHomeVC: BCBaseVC {
             MBProgressHUD.hide(for: self.view, animated: true)
             self.layoutTableView()
         }
+        
+        self.layoutTableView()
     }
     
     func monitorEmail(email: String, edited: Bool, row: Int?, lastEmail: String?) {
@@ -46,22 +48,27 @@ class BCHomeVC: BCBaseVC {
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
             if edited {
                 emails[row!] = email
                 BCAPIManager.shared.updateEmail(oldEmail: lastEmail!, newEmail: email) { (count, error) in
                     badge_counts[row!] = count ?? 0
                     self.delegate?.onEmailsUpdated()
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    self.tblEmails.reloadData()
+                    self.layoutTableView()
                 }
             } else {
                 emails.append(email)
                 BCAPIManager.shared.addEmail(email: email) { (count, error) in
                     badge_counts.append(count ?? 0)
                     self.delegate?.onEmailsUpdated()
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    self.tblEmails.reloadData()
+                    self.layoutTableView()
                 }
             }
-            
-            tblEmails.reloadData()
-            layoutTableView()
         }
     }
     
@@ -88,7 +95,7 @@ class BCHomeVC: BCBaseVC {
     // MARK: - Actions
     
     @IBAction func addButtonTouchUpInside(_ sender: Any) {
-        let alert  = UIAlertController(title: "Email Address", message: "Enter an email address to be monitored", preferredStyle: .alert)
+        let alert  = UIAlertController(title: "Add Email Address", message: "Enter an email address to be monitored", preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Email"
             textField.keyboardType = UIKeyboardType.emailAddress
@@ -125,7 +132,12 @@ extension BCHomeVC: UITableViewDataSource, UITableViewDelegate {
         cell.email = emails[indexPath.row]
         cell.deleteAction = { _cell in
             if let _indexPath = tableView.indexPath(for: _cell) {
-                self.deleteEmail(indexPath: _indexPath)
+                let alert  = UIAlertController(title: "Remove Email Address", message: "Do you want to remove the email address?", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+                    self.deleteEmail(indexPath: _indexPath)
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
         }
         return cell

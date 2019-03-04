@@ -113,6 +113,7 @@ extension BCBreachesVC: UITableViewDataSource, UITableViewDelegate {
             
             txtDetailHeader.text = emails[indexPath.row]
             MBProgressHUD.showAdded(to: self.view, animated: true)
+            self.details.removeAll()
             
             BCAPIManager.shared.getBreachesForEmail(email: emails[indexPath.row], is_read: nil) { (breaches, error) in
                 if let breaches = breaches {
