@@ -12,6 +12,9 @@ target 'Breach Control' do
   pod 'IQKeyboardManagerSwift', '~> 6.0.0'
   pod 'EasyAnimation'
   pod 'Parse'
+  pod 'Firebase/Core'
+  pod 'Fabric', '~> 1.9.0'
+  pod 'Crashlytics', '~> 3.12.0'
 
   target 'Breach ControlTests' do
     inherit! :search_paths

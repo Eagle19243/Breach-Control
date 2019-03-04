@@ -32,9 +32,8 @@ class BCHomeVC: BCBaseVC {
                 self.tblEmails.reloadData()
             }
             MBProgressHUD.hide(for: self.view, animated: true)
+            self.layoutTableView()
         }
-        
-        layoutTableView()
     }
     
     func monitorEmail(email: String, edited: Bool, row: Int?, lastEmail: String?) {
@@ -88,7 +87,7 @@ class BCHomeVC: BCBaseVC {
     
     // MARK: - Actions
     
-    @objc func spyglassButtonTouchUpInside(_ sender: Any) {
+    @IBAction func addButtonTouchUpInside(_ sender: Any) {
         let alert  = UIAlertController(title: "Email Address", message: "Enter an email address to be monitored", preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Email"
@@ -124,6 +123,11 @@ extension BCHomeVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BCEmailCell") as! BCEmailCell
         cell.email = emails[indexPath.row]
+        cell.deleteAction = { _cell in
+            if let _indexPath = tableView.indexPath(for: _cell) {
+                self.deleteEmail(indexPath: _indexPath)
+            }
+        }
         return cell
     }
     
@@ -131,23 +135,20 @@ extension BCHomeVC: UITableViewDataSource, UITableViewDelegate {
         editEmail(email: emails[indexPath.row], row: indexPath.row)
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            BCAPIManager.shared.deleteEmail(email: emails[indexPath.row]) { (success, error) in
-            }
-            
-            emails.remove(at: indexPath.row)
-            badge_counts.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            self.delegate?.onEmailsUpdated()
-            layoutTableView()
+    private func deleteEmail(indexPath: IndexPath) {
+        BCAPIManager.shared.deleteEmail(email: emails[indexPath.row]) { (success, error) in
         }
+        
+        emails.remove(at: indexPath.row)
+        badge_counts.remove(at: indexPath.row)
+        tblEmails.deleteRows(at: [indexPath], with: .fade)
+        self.delegate?.onEmailsUpdated()
+        layoutTableView()
     }
     
     private func searchButton() -> UIButton {
         let btnSearch = UIButton(type: .custom)
         let imageView = UIImageView(image: UIImage(named: "spyglass"))
-        btnSearch.addTarget(self, action: #selector(spyglassButtonTouchUpInside(_:)), for: .touchUpInside)
         btnSearch.frame = CGRect(origin: .zero, size: CGSize(width: tblEmails.frame.width, height: spyglassHeight + 16))
         btnSearch.backgroundColor = self.view.backgroundColor
         imageView.frame = CGRect(origin: .zero, size: CGSize(width: spyglassHeight, height: spyglassHeight))

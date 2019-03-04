@@ -18,15 +18,16 @@ class BCLaunchVC: BCBaseVC {
         super.viewDidLoad()
         
         UIView.animate(withDuration: 0.5, delay: 0.0,
-                       usingSpringWithDamping: 0.25,
+                       usingSpringWithDamping: 0.0,
                        initialSpringVelocity: 0.0,
                        options: [],
                        animations: {
-            self.logoImageView.layer.position.x = 30.0
-            self.spyglassImageView.layer.position.x = 200.0
+            // self.logoImageView.layer.position.x = 30.0
+            // self.spyglassImageView.layer.position.x = 200.0
         })
         
-        perform(#selector(self.gotoMainVC), with: nil, afterDelay: 3)
+        // perform(#selector(self.gotoMainVC), with: nil, afterDelay: 3)
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(gotoMainVC)))
     }
     
     @objc func gotoMainVC() {

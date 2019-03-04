@@ -9,6 +9,8 @@
 import UIKit
 import IQKeyboardManagerSwift
 import EasyAnimation
+import Firebase
+import Fabric
 import Parse
 import UserNotifications
 
@@ -23,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared.enable = true
         EasyAnimation.enable()
+        
+        // Firebase Configuration
+        FirebaseApp.configure()
+        Fabric.sharedSDK().debug = true
         
         // Parse initialization
         let configuration = ParseClientConfiguration {

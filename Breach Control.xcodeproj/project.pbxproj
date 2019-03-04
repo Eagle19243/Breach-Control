@@ -23,6 +23,7 @@
 		84A11A152219D106002F81D1 /* Breach_ControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A11A142219D106002F81D1 /* Breach_ControlTests.swift */; };
 		84AD8582221CD275009B7A7E /* BCLaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD8581221CD275009B7A7E /* BCLaunchVC.swift */; };
 		84AD8586221CD399009B7A7E /* BCMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD8585221CD399009B7A7E /* BCMainVC.swift */; };
+		84BE2B08222D8FF900802D5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BE2B07222D8FF900802D5D /* GoogleService-Info.plist */; };
 		84DD4B2E221AE6C200B00EE1 /* BCGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD4B2D221AE6C200B00EE1 /* BCGlobal.swift */; };
 		84DD4B30221AE6E400B00EE1 /* BCConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD4B2F221AE6E400B00EE1 /* BCConstants.swift */; };
 		84DD4B32221AE6F700B00EE1 /* BCAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD4B31221AE6F700B00EE1 /* BCAPIManager.swift */; };
@@ -67,6 +68,7 @@
 		84A11A162219D106002F81D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84AD8581221CD275009B7A7E /* BCLaunchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCLaunchVC.swift; sourceTree = "<group>"; };
 		84AD8585221CD399009B7A7E /* BCMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCMainVC.swift; sourceTree = "<group>"; };
+		84BE2B07222D8FF900802D5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84DD4B2D221AE6C200B00EE1 /* BCGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCGlobal.swift; sourceTree = "<group>"; };
 		84DD4B2F221AE6E400B00EE1 /* BCConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCConstants.swift; sourceTree = "<group>"; };
 		84DD4B31221AE6F700B00EE1 /* BCAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCAPIManager.swift; sourceTree = "<group>"; };
@@ -140,11 +142,12 @@
 		84A119FB2219D104002F81D1 /* Breach Control */ = {
 			isa = PBXGroup;
 			children = (
-				842D7346221FD291000BC659 /* Breach Control.entitlements */,
 				84A119FC2219D104002F81D1 /* AppDelegate.swift */,
 				84A11A062219D106002F81D1 /* Assets.xcassets */,
 				84A11A002219D104002F81D1 /* Main.storyboard */,
+				842D7346221FD291000BC659 /* Breach Control.entitlements */,
 				84A11A0B2219D106002F81D1 /* Info.plist */,
+				84BE2B07222D8FF900802D5D /* GoogleService-Info.plist */,
 				84DD4B21221AE5F500B00EE1 /* Classes */,
 			);
 			path = "Breach Control";
@@ -267,6 +270,7 @@
 				84A119F62219D104002F81D1 /* Frameworks */,
 				84A119F72219D104002F81D1 /* Resources */,
 				DF279299462578CC94EEA74F /* [CP] Embed Pods Frameworks */,
+				84BE2B09222D91E300802D5D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -350,6 +354,7 @@
 			files = (
 				84A11A072219D106002F81D1 /* Assets.xcassets in Resources */,
 				84A11A022219D104002F81D1 /* Main.storyboard in Resources */,
+				84BE2B08222D8FF900802D5D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +390,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		84BE2B09222D91E300802D5D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/Fabric/run\"\n";
+		};
 		D5859FB7C9A4E36CE0427BAC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -419,10 +442,12 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/EasyAnimation/EasyAnimation.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -431,10 +456,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyAnimation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
