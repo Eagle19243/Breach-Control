@@ -60,6 +60,7 @@ PODS:
     - Parse/Core (= 1.17.2)
   - Parse/Core (1.17.2):
     - Bolts/Tasks (~> 1.9)
+  - Pulsator (0.5.1)
   - "UITextView+Placeholder (1.2.1)"
 
 DEPENDENCIES:
@@ -71,6 +72,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift (~> 6.0.0)
   - MBProgressHUD
   - Parse
+  - Pulsator
   - "UITextView+Placeholder (~> 1.2)"
 
 SPEC REPOS:
@@ -90,6 +92,7 @@ SPEC REPOS:
     - MBProgressHUD
     - nanopb
     - Parse
+    - Pulsator
     - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
@@ -108,8 +111,9 @@ SPEC CHECKSUMS:
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Parse: 3b31a3dd1777b07ee7f0caee32fafbff544483a5
+  Pulsator: f465ca37212d826523fe8c79b07c1a4c1a941f5e
   "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
 
-PODFILE CHECKSUM: e56a0004ea6ce6a7ad2324ad272ee9686c296ebf
+PODFILE CHECKSUM: bacb9685b8f2d6c57b0ce661e5289d95e5bd7846
 
 COCOAPODS: 1.5.3

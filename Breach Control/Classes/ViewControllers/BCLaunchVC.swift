@@ -7,27 +7,37 @@
 //
 
 import UIKit
+import Pulsator
 
 class BCLaunchVC: BCBaseVC {
-
     
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var spyglassImageView: UIImageView!
     
+    let pulsator = Pulsator()
+    let spyglassHeight: CGFloat = 85
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIView.animate(withDuration: 0.5, delay: 0.0,
-                       usingSpringWithDamping: 0.0,
-                       initialSpringVelocity: 0.0,
-                       options: [],
-                       animations: {
-            // self.logoImageView.layer.position.x = 30.0
-            // self.spyglassImageView.layer.position.x = 200.0
-        })
+        // Pulse annimation for spyglass
+        
+        pulsator.numPulse = 4
+        pulsator.radius = 120.0
+        pulsator.backgroundColor = UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 0.8).cgColor
+        spyglassImageView.layer.superlayer?.insertSublayer(pulsator, below: spyglassImageView.layer)
+        pulsator.start()
         
         // perform(#selector(self.gotoMainVC), with: nil, afterDelay: 3)
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(gotoMainVC)))
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.view.layoutIfNeeded()
+        pulsator.position = CGPoint(x: spyglassImageView.frame.origin.x + spyglassHeight / 2 - 3,
+                                    y: spyglassImageView.frame.origin.y + spyglassHeight / 2 - 3)
     }
     
     @objc func gotoMainVC() {

@@ -18,7 +18,7 @@ class BCHomeVC: BCBaseVC {
 
     @IBOutlet fileprivate weak var tblEmails: UITableView!
     
-    fileprivate let spyglassHeight: CGFloat = 50
+    fileprivate let addButtonHeight: CGFloat = 35
     var delegate:BCHomeVCDelegate?
     
     override func viewDidLoad() {
@@ -94,7 +94,7 @@ class BCHomeVC: BCBaseVC {
     
     // MARK: - Actions
     
-    @IBAction func addButtonTouchUpInside(_ sender: Any) {
+    @objc func addButtonTouchUpInside(_ sender: Any) {
         let alert  = UIAlertController(title: "Add Email Address", message: "Enter an email address to be monitored", preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Email"
@@ -115,11 +115,11 @@ extension BCHomeVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return spyglassHeight + 16
+        return addButtonHeight + 16
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return searchButton()
+        return addButton()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -130,17 +130,18 @@ extension BCHomeVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BCEmailCell") as! BCEmailCell
         cell.email = emails[indexPath.row]
-        cell.deleteAction = { _cell in
-            if let _indexPath = tableView.indexPath(for: _cell) {
-                let alert  = UIAlertController(title: "Remove Email Address", message: "Do you want to remove the email address?", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
-                    self.deleteEmail(indexPath: _indexPath)
-                }))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            }
-        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let alert  = UIAlertController(title: "Remove Email Address", message: "Do you want to remove the email address?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+                self.deleteEmail(indexPath: indexPath)
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -158,24 +159,26 @@ extension BCHomeVC: UITableViewDataSource, UITableViewDelegate {
         layoutTableView()
     }
     
-    private func searchButton() -> UIButton {
-        let btnSearch = UIButton(type: .custom)
-        let imageView = UIImageView(image: UIImage(named: "spyglass"))
-        btnSearch.frame = CGRect(origin: .zero, size: CGSize(width: tblEmails.frame.width, height: spyglassHeight + 16))
-        btnSearch.backgroundColor = self.view.backgroundColor
-        imageView.frame = CGRect(origin: .zero, size: CGSize(width: spyglassHeight, height: spyglassHeight))
-        btnSearch.addSubview(imageView)
-        imageView.center = btnSearch.center
-        return btnSearch
+    private func addButton() -> UIButton {
+        let btnAdd = UIButton(type: .custom)
+        let imageView = UIImageView(image: UIImage(named: "add"))
+        btnAdd.addTarget(self, action: #selector(addButtonTouchUpInside(_:)), for: .touchUpInside)
+        btnAdd.frame = CGRect(origin: .zero, size: CGSize(width: tblEmails.frame.width, height: addButtonHeight + 16))
+        btnAdd.backgroundColor = self.view.backgroundColor
+        imageView.frame = CGRect(origin: .zero, size: CGSize(width: addButtonHeight, height: addButtonHeight))
+        btnAdd.addSubview(imageView)
+        imageView.center = btnAdd.center
+        
+        return btnAdd
     }
     
     fileprivate func layoutTableView() {
         let tabHeight: CGFloat = 49
         let topY: CGFloat = tblEmails.frame.origin.y
         let titleHeight: CGFloat = tblEmails.tableHeaderView?.frame.height ?? 0
-        let searchButtonHeight: CGFloat = spyglassHeight
+        let spyglassHeight:CGFloat = 85
         
-        var dy = (UIScreen.main.bounds.height - tabHeight - topY - titleHeight - searchButtonHeight - CGFloat(emails.count * 40)) / 2
+        var dy = (UIScreen.main.bounds.height - tabHeight - topY - titleHeight - addButtonHeight - CGFloat(emails.count * 40)) / 2 - spyglassHeight
         if dy < 0 { dy = 0 }
         tblEmails.contentInset = UIEdgeInsets(top: dy, left: 0, bottom: 0, right: 0)
     }

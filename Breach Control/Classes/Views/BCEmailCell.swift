@@ -11,7 +11,6 @@ import UIKit
 class BCEmailCell: UITableViewCell {
 
     @IBOutlet private weak var txtEmail: UILabel!
-    @IBOutlet weak var btnDelete: UIButton!
     
     var deleteAction: ((BCEmailCell) -> Void)?
     
@@ -33,9 +32,5 @@ class BCEmailCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-
-    @IBAction func onDeleteButtonTouchUpInside(_ sender: Any) {
-        deleteAction?(self)
     }
 }
