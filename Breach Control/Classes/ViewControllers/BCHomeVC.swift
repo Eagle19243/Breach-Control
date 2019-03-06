@@ -10,32 +10,56 @@ import UIKit
 import MBProgressHUD
 import Parse
 
-protocol BCHomeVCDelegate {
-    func onEmailsUpdated()
-}
-
-class BCHomeVC: BCBaseVC {
+class BCHomeVC: BCBaseVC, BCBreachesVCDelegate {
 
     @IBOutlet fileprivate weak var tblEmails: UITableView!
+    @IBOutlet weak var btnAbout: UIView!
+    @IBOutlet weak var btnBreaches: UIView!
+    @IBOutlet weak var txtBadge: UILabel!
+    @IBOutlet weak var badgeContainer: UIView!
     
     fileprivate let addButtonHeight: CGFloat = 35
-    var delegate:BCHomeVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.layoutTableView()
+        
+        txtBadge.superview?.layer.cornerRadius = txtBadge.frame.height / 2
+        txtBadge.superview?.layer.masksToBounds = true
+        txtBadge.superview?.clipsToBounds = true
+        
+        btnAbout.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(aboutButtonTouchUpInside)))
+        btnBreaches.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(breachesButtonTouchUpInside)))
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
         BCAPIManager.shared.getAllEmails { (objects, error) in
             if let objects = objects {
                 emails = objects
-                self.tblEmails.reloadData()
+                
+                if emails.count == 0 {
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                }
+                
+                for (index, email) in emails.enumerated() {
+                    BCAPIManager.shared.getBreachesForEmail(email: email, is_read: false, completion: { (breaches, error) in
+                        if let breaches = breaches {
+                            badge_counts.append(breaches.count)
+                        }
+                        
+                        if index == emails.count - 1 {
+                            self.tblEmails.reloadData()
+                            self.layoutTableView()
+                            self.updateBadge()
+                            MBProgressHUD.hide(for: self.view, animated: true)
+                        }
+                    })
+                }
+            } else {
+                MBProgressHUD.hide(for: self.view, animated: true)
             }
-            MBProgressHUD.hide(for: self.view, animated: true)
-            self.layoutTableView()
         }
-        
-        self.layoutTableView()
     }
     
     func monitorEmail(email: String, edited: Bool, row: Int?, lastEmail: String?) {
@@ -54,7 +78,7 @@ class BCHomeVC: BCBaseVC {
                 emails[row!] = email
                 BCAPIManager.shared.updateEmail(oldEmail: lastEmail!, newEmail: email) { (count, error) in
                     badge_counts[row!] = count ?? 0
-                    self.delegate?.onEmailsUpdated()
+                    self.updateBadge()
                     MBProgressHUD.hide(for: self.view, animated: true)
                     self.tblEmails.reloadData()
                     self.layoutTableView()
@@ -63,7 +87,7 @@ class BCHomeVC: BCBaseVC {
                 emails.append(email)
                 BCAPIManager.shared.addEmail(email: email) { (count, error) in
                     badge_counts.append(count ?? 0)
-                    self.delegate?.onEmailsUpdated()
+                    self.updateBadge()
                     MBProgressHUD.hide(for: self.view, animated: true)
                     self.tblEmails.reloadData()
                     self.layoutTableView()
@@ -92,6 +116,21 @@ class BCHomeVC: BCBaseVC {
         return emailTest.evaluate(with: email)
     }
     
+    func updateBadge() {
+        var count_unread_breaches = 0
+        
+        for badge_count in badge_counts {
+            count_unread_breaches += badge_count
+        }
+        
+        if count_unread_breaches > 0 {
+            badgeContainer.isHidden = false
+            txtBadge.text = String(count_unread_breaches)
+        } else {
+            badgeContainer.isHidden = true
+        }
+    }
+    
     // MARK: - Actions
     
     @objc func addButtonTouchUpInside(_ sender: Any) {
@@ -105,6 +144,23 @@ class BCHomeVC: BCBaseVC {
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func aboutButtonTouchUpInside() {
+        let aboutVC = self.storyboard?.instantiateViewController(withIdentifier: "BCAboutVC") as! BCAboutVC
+        self.present(aboutVC, animated: true, completion: nil)
+    }
+    
+    @objc func breachesButtonTouchUpInside() {
+        let breachesVC = self.storyboard?.instantiateViewController(withIdentifier: "BCBreachesVC") as! BCBreachesVC
+        breachesVC.delegate = self
+        self.present(breachesVC, animated: true, completion: nil)
+    }
+    
+    // MARK: - BCBreachesVCDelegate
+    
+    func onCloseButtonTouchUpInside() {
+        self.updateBadge()
     }
 
 }
@@ -155,7 +211,7 @@ extension BCHomeVC: UITableViewDataSource, UITableViewDelegate {
         emails.remove(at: indexPath.row)
         badge_counts.remove(at: indexPath.row)
         tblEmails.deleteRows(at: [indexPath], with: .fade)
-        self.delegate?.onEmailsUpdated()
+        self.updateBadge()
         layoutTableView()
     }
     

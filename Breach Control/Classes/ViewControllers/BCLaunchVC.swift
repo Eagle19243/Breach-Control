@@ -40,7 +40,7 @@ class BCLaunchVC: BCBaseVC {
     }
     
     @objc func gotoMainVC() {
-        let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "BCMainVC") as! BCMainVC
-        show(mainVC, sender: self)
+        let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "BCHomeVC") as! BCHomeVC
+        show(homeVC, sender: self)
     }
 }

@@ -22,7 +22,6 @@
 		84A11A072219D106002F81D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A11A062219D106002F81D1 /* Assets.xcassets */; };
 		84A11A152219D106002F81D1 /* Breach_ControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A11A142219D106002F81D1 /* Breach_ControlTests.swift */; };
 		84AD8582221CD275009B7A7E /* BCLaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD8581221CD275009B7A7E /* BCLaunchVC.swift */; };
-		84AD8586221CD399009B7A7E /* BCMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD8585221CD399009B7A7E /* BCMainVC.swift */; };
 		84BE2B08222D8FF900802D5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BE2B07222D8FF900802D5D /* GoogleService-Info.plist */; };
 		84DD4B2E221AE6C200B00EE1 /* BCGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD4B2D221AE6C200B00EE1 /* BCGlobal.swift */; };
 		84DD4B30221AE6E400B00EE1 /* BCConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD4B2F221AE6E400B00EE1 /* BCConstants.swift */; };
@@ -67,7 +66,6 @@
 		84A11A142219D106002F81D1 /* Breach_ControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breach_ControlTests.swift; sourceTree = "<group>"; };
 		84A11A162219D106002F81D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84AD8581221CD275009B7A7E /* BCLaunchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCLaunchVC.swift; sourceTree = "<group>"; };
-		84AD8585221CD399009B7A7E /* BCMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCMainVC.swift; sourceTree = "<group>"; };
 		84BE2B07222D8FF900802D5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84DD4B2D221AE6C200B00EE1 /* BCGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCGlobal.swift; sourceTree = "<group>"; };
 		84DD4B2F221AE6E400B00EE1 /* BCConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCConstants.swift; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 			children = (
 				84DD4B28221AE5F500B00EE1 /* Base */,
 				84AD8581221CD275009B7A7E /* BCLaunchVC.swift */,
-				84AD8585221CD399009B7A7E /* BCMainVC.swift */,
 				841F8E72221CE6B300AAF9A4 /* BCHomeVC.swift */,
 				841F8E7C221D044200AAF9A4 /* BCAboutVC.swift */,
 				841F8E7E221D046E00AAF9A4 /* BCBreachesVC.swift */,
@@ -486,7 +483,6 @@
 				84DD4B32221AE6F700B00EE1 /* BCAPIManager.swift in Sources */,
 				84DD4B36221AE78C00B00EE1 /* BCBaseView.swift in Sources */,
 				84DD4B30221AE6E400B00EE1 /* BCConstants.swift in Sources */,
-				84AD8586221CD399009B7A7E /* BCMainVC.swift in Sources */,
 				841F8E7F221D046E00AAF9A4 /* BCBreachesVC.swift in Sources */,
 				84AD8582221CD275009B7A7E /* BCLaunchVC.swift in Sources */,
 				848B52B9222074EB00E1FA06 /* BCEmailModel.swift in Sources */,
