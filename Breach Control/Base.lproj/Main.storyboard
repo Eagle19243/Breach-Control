@@ -166,7 +166,7 @@
                                 <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breach Control" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BRC-gI-W5V">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -179,8 +179,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test@mail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSI-a4-5OV">
-                                                    <rect key="frame" x="140" y="11.5" width="95.5" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <rect key="frame" x="131" y="10" width="113" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -286,6 +286,7 @@
         <!--MainVC-->
         <scene sceneID="rSg-Nt-F2d">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kAo-7h-VVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="BCMainVC" id="jF4-3s-D89" customClass="BCMainVC" customModule="Breach_Control" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kd0-dm-Xll">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -301,7 +302,6 @@
                         <segue destination="qXS-Y1-Ck0" kind="relationship" relationship="viewControllers" id="SI7-l0-uF6"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kAo-7h-VVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-660" y="-54"/>
         </scene>
@@ -460,15 +460,15 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="description" translatesAutoresizingMaskIntoConstraints="NO" id="NwB-c6-Qwk">
-                                                            <rect key="frame" x="20" y="15" width="50" height="50"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="breach" translatesAutoresizingMaskIntoConstraints="NO" id="NwB-c6-Qwk">
+                                                            <rect key="frame" x="20" y="15" width="60" height="60"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="50" id="4md-dG-Yf6"/>
+                                                                <constraint firstAttribute="width" constant="60" id="4md-dG-Yf6"/>
                                                                 <constraint firstAttribute="width" secondItem="NwB-c6-Qwk" secondAttribute="height" multiplier="1:1" id="aew-QT-f59"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsu-af-pHV">
-                                                            <rect key="frame" x="90" y="15" width="265" height="274.5"/>
+                                                            <rect key="frame" x="100" y="15" width="255" height="274.5"/>
                                                             <string key="text">Collection #1: In January 2019, a large collection of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.
 
 Compromised data: Email addresses, Passwords</string>
@@ -526,9 +526,9 @@ Compromised data: Email addresses, Passwords</string>
     </scenes>
     <resources>
         <image name="about" width="39" height="39"/>
+        <image name="breach" width="100" height="100"/>
         <image name="breaches" width="39" height="39"/>
         <image name="close" width="80" height="80"/>
-        <image name="description" width="200" height="200"/>
         <image name="home" width="39" height="39"/>
         <image name="left_arrow" width="80" height="80"/>
         <image name="right_arrow" width="80" height="80"/>

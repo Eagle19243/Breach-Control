@@ -21,7 +21,6 @@ class BCLaunchVC: BCBaseVC {
         super.viewDidLoad()
         
         // Pulse annimation for spyglass
-        
         pulsator.numPulse = 4
         pulsator.radius = 120.0
         pulsator.backgroundColor = UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 0.8).cgColor
