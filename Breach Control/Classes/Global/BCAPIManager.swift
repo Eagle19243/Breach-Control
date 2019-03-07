@@ -161,4 +161,30 @@ class BCAPIManager: NSObject {
             }
         }
     }
+    
+    func getAllBreaches(is_read: Bool?, completion: @escaping ([BCBreachModel]?, Error?) -> Void) {
+        let query = PFQuery(className: "Breach")
+        query.whereKey("device", equalTo: PFInstallation.current()!)
+        query.includeKey("email")
+        
+        if let is_read = is_read {
+            query.whereKey("is_read", equalTo: is_read)
+        }
+        query.limit = 1000
+        query.addDescendingOrder("breach_date")
+        
+        query.findObjectsInBackground(block: { (objects, error) in
+            if let objects = objects {
+                var ret: [BCBreachModel] = []
+                for object in objects {
+                    if let breach = object as? BCBreachModel {
+                        ret.append(breach)
+                    }
+                }
+                completion(ret, nil)
+            } else {
+                completion(nil, error)
+            }
+        })
+    }
 }

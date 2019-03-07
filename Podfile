@@ -12,6 +12,7 @@ target 'Breach Control' do
   pod 'IQKeyboardManagerSwift', '~> 6.0.0'
   pod 'EasyAnimation'
   pod 'Pulsator'
+  pod 'ReachabilitySwift'
   pod 'Parse'
   pod 'Firebase/Core'
   pod 'Fabric', '~> 1.9.0'

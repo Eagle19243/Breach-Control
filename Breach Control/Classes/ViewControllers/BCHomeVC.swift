@@ -42,20 +42,27 @@ class BCHomeVC: BCBaseVC, BCBreachesVCDelegate {
                     MBProgressHUD.hide(for: self.view, animated: true)
                 }
                 
-                for (index, email) in emails.enumerated() {
-                    BCAPIManager.shared.getBreachesForEmail(email: email, is_read: false, completion: { (breaches, error) in
+                BCAPIManager.shared.getAllBreaches(is_read: false, completion: { (breaches, error) in
+                    for email in emails {
+                        var count_unread_breaches = 0
+                        
                         if let breaches = breaches {
-                            badge_counts.append(breaches.count)
+                            for breach in breaches {
+                                if let obj_email = breach.email as? BCEmailModel,
+                                    email == obj_email.email {
+                                    count_unread_breaches += 1
+                                }
+                            }
                         }
                         
-                        if index == emails.count - 1 {
-                            self.tblEmails.reloadData()
-                            self.layoutTableView()
-                            self.updateBadge()
-                            MBProgressHUD.hide(for: self.view, animated: true)
-                        }
-                    })
-                }
+                        badge_counts.append(count_unread_breaches)
+                    }
+                    
+                    self.tblEmails.reloadData()
+                    self.layoutTableView()
+                    self.updateBadge()
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                })
             } else {
                 MBProgressHUD.hide(for: self.view, animated: true)
             }
@@ -72,27 +79,25 @@ class BCHomeVC: BCBaseVC, BCBreachesVCDelegate {
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            
             if edited {
                 emails[row!] = email
+                badge_counts[row!] = 0
                 BCAPIManager.shared.updateEmail(oldEmail: lastEmail!, newEmail: email) { (count, error) in
                     badge_counts[row!] = count ?? 0
                     self.updateBadge()
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    self.tblEmails.reloadData()
-                    self.layoutTableView()
                 }
             } else {
                 emails.append(email)
+                badge_counts.append(0)
+                let row = badge_counts.count - 1
                 BCAPIManager.shared.addEmail(email: email) { (count, error) in
-                    badge_counts.append(count ?? 0)
+                    badge_counts[row] = count ?? 0
                     self.updateBadge()
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    self.tblEmails.reloadData()
-                    self.layoutTableView()
                 }
             }
+            
+            self.tblEmails.reloadData()
+            self.layoutTableView()
         }
     }
     

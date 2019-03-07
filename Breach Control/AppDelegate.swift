@@ -9,6 +9,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 import EasyAnimation
+import Reachability
 import Firebase
 import Fabric
 import Parse
@@ -18,7 +19,7 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let reachability = Reachability()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -46,6 +47,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.getNotificationSettings()
         }
         
+        // Network connection
+        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
+        
+        do {
+            try reachability?.startNotifier()
+        } catch {
+            print("could not start reachability notifier")
+        }
+        
         return true
     }
 
@@ -64,8 +74,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        // Reset badge count
         application.applicationIconBadgeNumber = 0;
+        if let installation = PFInstallation.current() {
+            installation.badge = 0
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -92,7 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func createInstallationOnParse(deviceTokenData:Data){
         // Save Installation object
-        if let installation = PFInstallation.current(){
+        if let installation = PFInstallation.current() {
             installation.setDeviceTokenFrom(deviceTokenData)
             installation.saveInBackground {
                 (success: Bool, error: Error?) in
@@ -107,7 +121,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
-        
+    }
+    
+    @objc func reachabilityChanged(note: Notification) {
+        let reachability = note.object as! Reachability
+        if reachability.connection == .none {
+            let alert = UIAlertController(title: "No Internet Connection", message: "Unable to connect to the internet, check you connection and try again.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+                exit(0)
+            }))
+            if let rootVC = UIApplication.shared.keyWindow?.rootViewController {
+                rootVC.present(alert, animated: true, completion: nil)
+            }
+        }
     }
 
 }

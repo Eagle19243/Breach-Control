@@ -61,6 +61,7 @@ PODS:
   - Parse/Core (1.17.2):
     - Bolts/Tasks (~> 1.9)
   - Pulsator (0.5.1)
+  - ReachabilitySwift (4.3.0)
   - "UITextView+Placeholder (1.2.1)"
 
 DEPENDENCIES:
@@ -73,6 +74,7 @@ DEPENDENCIES:
   - MBProgressHUD
   - Parse
   - Pulsator
+  - ReachabilitySwift
   - "UITextView+Placeholder (~> 1.2)"
 
 SPEC REPOS:
@@ -93,6 +95,7 @@ SPEC REPOS:
     - nanopb
     - Parse
     - Pulsator
+    - ReachabilitySwift
     - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
@@ -112,8 +115,9 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Parse: 3b31a3dd1777b07ee7f0caee32fafbff544483a5
   Pulsator: f465ca37212d826523fe8c79b07c1a4c1a941f5e
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
 
-PODFILE CHECKSUM: bacb9685b8f2d6c57b0ce661e5289d95e5bd7846
+PODFILE CHECKSUM: 28e1f3f574994cdbf815b57a9bfee285ecb2074d
 
 COCOAPODS: 1.5.3

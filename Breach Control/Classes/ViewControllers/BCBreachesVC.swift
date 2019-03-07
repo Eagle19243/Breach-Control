@@ -65,6 +65,8 @@ class BCBreachesVC: BCBaseVC {
     }
     
     @objc func hideDetailView() {
+        self.tblDetails.setContentOffset(CGPoint.zero, animated: false)
+        
         UIView.animate(withDuration: 0.5,
                        animations: {
             self.tblBreaches.layer.position.x = self.view.frame.width / 2
@@ -111,7 +113,6 @@ extension BCBreachesVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == tblBreaches {
-            
             txtDetailHeader.text = emails[indexPath.row]
             MBProgressHUD.showAdded(to: self.view, animated: true)
             self.details.removeAll()
