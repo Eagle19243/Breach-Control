@@ -101,6 +101,7 @@ extension BCBreachesVC: UITableViewDataSource, UITableViewDelegate {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BCBreachDetailCell", for: indexPath) as! BCBreachDetailCell
+            cell.name = details[indexPath.row].name
             cell.desc = details[indexPath.row].desc
             cell.is_read = details[indexPath.row].is_read
             

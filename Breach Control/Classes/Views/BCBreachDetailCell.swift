@@ -12,9 +12,22 @@ class BCBreachDetailCell: UITableViewCell {
     
     @IBOutlet private weak var txtDesc: UILabel!
     
+    var name: String = ""
+    
     var desc: String? {
         set {
-            txtDesc.text = newValue
+            guard let newValue = newValue else {
+                return
+            }
+            
+            txtDesc.text = "\(name): \(newValue)"
+            
+            for conditionalString in ConditionalStrings {
+                txtDesc.set(textColor: UIColor.red, range: txtDesc.range(string: conditionalString))
+                txtDesc.set(font: UIFont.boldSystemFont(ofSize: 13.0), range: txtDesc.range(string: conditionalString))
+            }
+            
+            txtDesc.set(font: UIFont.boldSystemFont(ofSize: 13.0), range: txtDesc.range(string: name))
         }
         get {
             return txtDesc.text
@@ -24,13 +37,13 @@ class BCBreachDetailCell: UITableViewCell {
     var is_read: Bool? {
         set {
             if newValue == true {
-                txtDesc.font = UIFont.systemFont(ofSize: 13.0)
+                self.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             } else {
-                txtDesc.font = UIFont.boldSystemFont(ofSize: 13.0)
+                self.backgroundColor = UIColor(red: 222/255, green: 249/255, blue: 248/255, alpha: 1.0)
             }
         }
         get {
-            return txtDesc.font == UIFont.systemFont(ofSize: 13.0)
+            return self.backgroundColor == UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         }
     }
     

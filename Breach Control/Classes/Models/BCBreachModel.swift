@@ -11,6 +11,7 @@ import Parse
 
 class BCBreachModel: PFObject, PFSubclassing {
     
+    @NSManaged var name: String
     @NSManaged var desc: String
     @NSManaged var email: PFObject
     @NSManaged var device: PFInstallation?

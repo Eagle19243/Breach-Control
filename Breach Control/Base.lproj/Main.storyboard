@@ -50,7 +50,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDt-Cs-Udb">
-                                <rect key="frame" x="0.0" y="125.5" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="115.5" width="375" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvL-fx-UiG">
                                         <rect key="frame" x="20" y="17" width="106" height="21"/>
@@ -87,7 +87,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faR-U6-2vD">
-                                <rect key="frame" x="0.0" y="180.5" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="170.5" width="375" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Providers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpt-kX-wfJ">
                                         <rect key="frame" x="20" y="17" width="112.5" height="21"/>
@@ -129,7 +129,7 @@
                             <constraint firstItem="nCA-y7-Tk3" firstAttribute="top" secondItem="Ldh-fM-6am" secondAttribute="top" id="3PT-gN-htx"/>
                             <constraint firstItem="nCA-y7-Tk3" firstAttribute="leading" secondItem="y5B-rG-5il" secondAttribute="leading" id="Fxh-eA-xft"/>
                             <constraint firstItem="LDt-Cs-Udb" firstAttribute="trailing" secondItem="y5B-rG-5il" secondAttribute="trailing" id="IhF-Dc-TVv"/>
-                            <constraint firstItem="LDt-Cs-Udb" firstAttribute="top" secondItem="nCA-y7-Tk3" secondAttribute="bottom" constant="30" id="K9F-Dt-VYX"/>
+                            <constraint firstItem="LDt-Cs-Udb" firstAttribute="top" secondItem="nCA-y7-Tk3" secondAttribute="bottom" constant="20" id="K9F-Dt-VYX"/>
                             <constraint firstItem="LDt-Cs-Udb" firstAttribute="leading" secondItem="y5B-rG-5il" secondAttribute="leading" id="VYL-ve-2bi"/>
                             <constraint firstItem="faR-U6-2vD" firstAttribute="trailing" secondItem="y5B-rG-5il" secondAttribute="trailing" id="je2-ag-FJu"/>
                             <constraint firstItem="6aP-eD-0tc" firstAttribute="top" secondItem="y5B-rG-5il" secondAttribute="top" id="p6T-cT-r8T"/>
@@ -214,13 +214,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bK-qA-4sb">
                                         <rect key="frame" x="30" y="0.0" width="49" height="49"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about" translatesAutoresizingMaskIntoConstraints="NO" id="1N7-D4-uJ5">
+                                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about" translatesAutoresizingMaskIntoConstraints="NO" id="1N7-D4-uJ5">
                                                 <rect key="frame" x="8" y="2" width="33" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="1N7-D4-uJ5" secondAttribute="height" multiplier="1:1" id="RoN-xC-H7d"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFv-WD-03L">
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFv-WD-03L">
                                                 <rect key="frame" x="10" y="37" width="29" height="10"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="3mj-th-gW5"/>
@@ -243,13 +243,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AS6-5X-9Zj">
                                         <rect key="frame" x="296" y="0.0" width="49" height="49"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="breaches" translatesAutoresizingMaskIntoConstraints="NO" id="0JL-U9-PiU">
+                                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="breaches" translatesAutoresizingMaskIntoConstraints="NO" id="0JL-U9-PiU">
                                                 <rect key="frame" x="8" y="2" width="33" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="0JL-U9-PiU" secondAttribute="height" multiplier="1:1" id="fUS-VX-tGT"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breaches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ach-6s-Nqf">
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breaches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ach-6s-Nqf">
                                                 <rect key="frame" x="2" y="37" width="45" height="10"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="1nL-li-g7L"/>
@@ -268,7 +268,7 @@
                                             <constraint firstAttribute="bottom" secondItem="ach-6s-Nqf" secondAttribute="bottom" constant="2" id="tP1-3I-igJ"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8H-oV-VIb">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8H-oV-VIb">
                                         <rect key="frame" x="333" y="5" width="20" height="15"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fz5-6b-kBj">
@@ -296,7 +296,7 @@
                                     <constraint firstAttribute="bottom" secondItem="AS6-5X-9Zj" secondAttribute="bottom" id="4tT-uA-uHn"/>
                                     <constraint firstItem="AS6-5X-9Zj" firstAttribute="width" secondItem="AS6-5X-9Zj" secondAttribute="height" multiplier="1:1" id="CRM-ap-YuO"/>
                                     <constraint firstItem="AS6-5X-9Zj" firstAttribute="top" secondItem="OwT-Bw-23d" secondAttribute="top" id="CcP-hJ-qev"/>
-                                    <constraint firstAttribute="trailing" secondItem="z8H-oV-VIb" secondAttribute="trailing" constant="22" id="IHL-wy-2GM"/>
+                                    <constraint firstItem="z8H-oV-VIb" firstAttribute="leading" secondItem="AS6-5X-9Zj" secondAttribute="trailing" constant="-12" id="IRq-k2-iRB"/>
                                     <constraint firstItem="1bK-qA-4sb" firstAttribute="top" secondItem="OwT-Bw-23d" secondAttribute="top" id="XIu-GB-p9b"/>
                                     <constraint firstAttribute="height" constant="49" id="hBn-yE-TBT"/>
                                     <constraint firstItem="z8H-oV-VIb" firstAttribute="top" secondItem="OwT-Bw-23d" secondAttribute="top" constant="5" id="iUA-Db-rS2"/>

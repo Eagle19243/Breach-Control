@@ -15,6 +15,7 @@
 		8466AAA0221D349700975C9E /* BCBreachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466AA9F221D349700975C9E /* BCBreachCell.swift */; };
 		848B52B9222074EB00E1FA06 /* BCEmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B52B8222074EB00E1FA06 /* BCEmailModel.swift */; };
 		848B52BB22207A4E00E1FA06 /* BCNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B52BA22207A4E00E1FA06 /* BCNotificationModel.swift */; };
+		84911D7A223088C9007DC19C /* UILabel+FormattedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84911D79223088C9007DC19C /* UILabel+FormattedText.swift */; };
 		8491A38E22244BC500B2E0FE /* BCBreachDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491A38D22244BC500B2E0FE /* BCBreachDetailCell.swift */; };
 		8491A390222457B100B2E0FE /* BCBreachModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491A38F222457B100B2E0FE /* BCBreachModel.swift */; };
 		84A119FD2219D104002F81D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A119FC2219D104002F81D1 /* AppDelegate.swift */; };
@@ -55,6 +56,7 @@
 		8466AA9F221D349700975C9E /* BCBreachCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCBreachCell.swift; sourceTree = "<group>"; };
 		848B52B8222074EB00E1FA06 /* BCEmailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCEmailModel.swift; sourceTree = "<group>"; };
 		848B52BA22207A4E00E1FA06 /* BCNotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCNotificationModel.swift; sourceTree = "<group>"; };
+		84911D79223088C9007DC19C /* UILabel+FormattedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+FormattedText.swift"; sourceTree = "<group>"; };
 		8491A38D22244BC500B2E0FE /* BCBreachDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCBreachDetailCell.swift; sourceTree = "<group>"; };
 		8491A38F222457B100B2E0FE /* BCBreachModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCBreachModel.swift; sourceTree = "<group>"; };
 		84A119F92219D104002F81D1 /* Breach Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Breach Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +188,7 @@
 		84DD4B23221AE5F500B00EE1 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				84911D79223088C9007DC19C /* UILabel+FormattedText.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				848B52BB22207A4E00E1FA06 /* BCNotificationModel.swift in Sources */,
 				8491A38E22244BC500B2E0FE /* BCBreachDetailCell.swift in Sources */,
 				845AE26C221DD812008B4DBE /* BCEmailCell.swift in Sources */,
+				84911D7A223088C9007DC19C /* UILabel+FormattedText.swift in Sources */,
 				84DD4B2E221AE6C200B00EE1 /* BCGlobal.swift in Sources */,
 				841F8E73221CE6B300AAF9A4 /* BCHomeVC.swift in Sources */,
 				84DD4B32221AE6F700B00EE1 /* BCAPIManager.swift in Sources */,

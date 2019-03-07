@@ -11,5 +11,18 @@ let ParseApplicationId = "1NxOGoB8C3PSACHiLxpRBrYXkJucHYyenly9WnhW"
 let ParseClientKey = "NZCYeC98fZ8LuCoU7Rlc0DRqJuj13OihbduHVYH6"
 let ParseRestAPIKey = "Xy5ceuEHQVAlH0Gll7FKNit0QbRRGs2LZr7HOXFw"
 let ParseServerURL = "https://parseapi.back4app.com/"
+let ConditionalStrings = [
+    "email address",
+    "email addresses",
+    "username",
+    "usernames",
+    "password",
+    "passwords",
+    "SSN",
+    "Social Security Number",
+    "Social Security Numbers",
+    "social security number",
+    "social security numbers",
+]
 
 let DeviceId = UIDevice.current.identifierForVendor?.uuidString
