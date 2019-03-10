@@ -126,8 +126,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @objc func reachabilityChanged(note: Notification) {
         let reachability = note.object as! Reachability
         if reachability.connection == .none {
-            let alert = UIAlertController(title: "No Internet Connection", message: "Unable to connect to the internet, check you connection and try again.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+            let alert = UIAlertController(title: "No Internet Connection", message: "Unable to connect to the Internet - check your connection and try again.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                 exit(0)
             }))
             if let rootVC = UIApplication.shared.keyWindow?.rootViewController {

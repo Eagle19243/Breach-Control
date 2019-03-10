@@ -35,7 +35,7 @@ class BCLaunchVC: BCBaseVC {
         super.viewDidLayoutSubviews()
         
         self.view.layoutIfNeeded()
-        pulsator.position = CGPoint(x: spyglassImageView.frame.origin.x + spyglassHeight / 2 - 3,
+        pulsator.position = CGPoint(x: spyglassImageView.frame.origin.x + spyglassHeight / 2 - 4,
                                     y: spyglassImageView.frame.origin.y + spyglassHeight / 2 - 3)
     }
     

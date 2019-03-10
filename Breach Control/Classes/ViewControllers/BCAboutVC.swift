@@ -7,13 +7,56 @@
 //
 
 import UIKit
-
 class BCAboutVC: BCBaseVC {
 
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var btnPrivacy: UIView!
+    @IBOutlet weak var btnProviders: UIView!
+    @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var detailHeaderView: UIView!
+    @IBOutlet weak var txtDetailHeader: UILabel!
+    @IBOutlet weak var webView: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        btnPrivacy.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(privacyButtonTouchUpInside)))
+        btnProviders.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(providersButtonTouchUpInside)))
+        detailHeaderView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideDetailView)))
+    }
+    
+    @objc func privacyButtonTouchUpInside() {
+        txtDetailHeader.text = "Privacy Policy"
+        let url = Bundle.main.url(forResource: "privacy", withExtension: "html")
+        let request = URLRequest(url: url!)
+        webView.loadRequest(request)
+        
+        UIView.animate(withDuration: 0.5,
+                       animations: {
+                        self.containerView.layer.position.x = -self.view.frame.width / 2
+                        self.detailView.layer.position.x = self.view.frame.width / 2
+        })
+    }
+    
+    @objc func providersButtonTouchUpInside() {
+        txtDetailHeader.text = "Data Providers"
+        let url = Bundle.main.url(forResource: "providers", withExtension: "html")
+        let request = URLRequest(url: url!)
+        webView.loadRequest(request)
+        
+        UIView.animate(withDuration: 0.5,
+                       animations: {
+                        self.containerView.layer.position.x = -self.view.frame.width / 2
+                        self.detailView.layer.position.x = self.view.frame.width / 2
+        })
+    }
+    
+    @objc func hideDetailView() {
+        UIView.animate(withDuration: 0.5,
+                       animations: {
+                        self.containerView.layer.position.x = self.view.frame.width / 2
+                        self.detailView.layer.position.x = self.view.frame.width * 2
+        })
     }
 
     @IBAction func closeButtonTouchUpInside(_ sender: Any) {

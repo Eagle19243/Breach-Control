@@ -18,6 +18,8 @@
 		84911D7A223088C9007DC19C /* UILabel+FormattedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84911D79223088C9007DC19C /* UILabel+FormattedText.swift */; };
 		8491A38E22244BC500B2E0FE /* BCBreachDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491A38D22244BC500B2E0FE /* BCBreachDetailCell.swift */; };
 		8491A390222457B100B2E0FE /* BCBreachModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491A38F222457B100B2E0FE /* BCBreachModel.swift */; };
+		849D526F2235891600BCEA61 /* providers.html in Resources */ = {isa = PBXBuildFile; fileRef = 849D526D2235891600BCEA61 /* providers.html */; };
+		849D52702235891600BCEA61 /* privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = 849D526E2235891600BCEA61 /* privacy.html */; };
 		84A119FD2219D104002F81D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A119FC2219D104002F81D1 /* AppDelegate.swift */; };
 		84A11A022219D104002F81D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A11A002219D104002F81D1 /* Main.storyboard */; };
 		84A11A072219D106002F81D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A11A062219D106002F81D1 /* Assets.xcassets */; };
@@ -59,6 +61,8 @@
 		84911D79223088C9007DC19C /* UILabel+FormattedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+FormattedText.swift"; sourceTree = "<group>"; };
 		8491A38D22244BC500B2E0FE /* BCBreachDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCBreachDetailCell.swift; sourceTree = "<group>"; };
 		8491A38F222457B100B2E0FE /* BCBreachModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCBreachModel.swift; sourceTree = "<group>"; };
+		849D526D2235891600BCEA61 /* providers.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = providers.html; sourceTree = "<group>"; };
+		849D526E2235891600BCEA61 /* privacy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacy.html; sourceTree = "<group>"; };
 		84A119F92219D104002F81D1 /* Breach Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Breach Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A119FC2219D104002F81D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84A11A012219D104002F81D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +123,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		849D526C223588AF00BCEA61 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				849D526E2235891600BCEA61 /* privacy.html */,
+				849D526D2235891600BCEA61 /* providers.html */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		84A119F02219D104002F81D1 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +162,7 @@
 				84A11A0B2219D106002F81D1 /* Info.plist */,
 				84BE2B07222D8FF900802D5D /* GoogleService-Info.plist */,
 				84DD4B21221AE5F500B00EE1 /* Classes */,
+				849D526C223588AF00BCEA61 /* Resource */,
 			);
 			path = "Breach Control";
 			sourceTree = "<group>";
@@ -352,9 +366,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849D52702235891600BCEA61 /* privacy.html in Resources */,
 				84A11A072219D106002F81D1 /* Assets.xcassets in Resources */,
 				84A11A022219D104002F81D1 /* Main.storyboard in Resources */,
 				84BE2B08222D8FF900802D5D /* GoogleService-Info.plist in Resources */,
+				849D526F2235891600BCEA61 /* providers.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
