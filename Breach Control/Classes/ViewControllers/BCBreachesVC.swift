@@ -16,7 +16,6 @@ protocol BCBreachesVCDelegate {
 
 class BCBreachesVC: BCBaseVC {
 
-    @IBOutlet fileprivate weak var btnClose: UIButton!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var detailHeaderView: UIView!
     @IBOutlet weak var txtDetailHeader: UILabel!
@@ -72,11 +71,6 @@ class BCBreachesVC: BCBaseVC {
             self.tblBreaches.layer.position.x = self.view.frame.width / 2
             self.detailView.layer.position.x = self.view.frame.width * 2
         })
-        
-        for breach in details {
-            breach.is_read = true
-            breach.saveInBackground()
-        }
     }
     
 }
@@ -106,6 +100,9 @@ extension BCBreachesVC: UITableViewDataSource, UITableViewDelegate {
             cell.name = details[indexPath.row].name
             cell.desc = details[indexPath.row].desc
             cell.is_read = details[indexPath.row].is_read
+            
+            details[indexPath.row].is_read = true
+            details[indexPath.row].saveInBackground()
             
             return cell
         }

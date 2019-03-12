@@ -20,6 +20,22 @@ class BCAboutVC: BCBaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let screenSize = UIScreen.main.bounds.size
+        var topLayoutY: CGFloat = 0.0
+        
+        if #available(iOS 11.0, *) {
+            let window = UIApplication.shared.keyWindow
+            topLayoutY = window?.safeAreaInsets.top ?? 0.0
+        }
+        let breachesRect = CGRect(x: 0,
+                                  y: topLayoutY + 95.5,
+                                  width: screenSize.width,
+                                  height: screenSize.height - topLayoutY - 95.5)
+        containerView.frame = breachesRect
+        
+        detailView.frame = breachesRect
+        detailView.layer.position.x = self.view.frame.width * 2
+        
         btnPrivacy.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(privacyButtonTouchUpInside)))
         btnProviders.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(providersButtonTouchUpInside)))
         detailHeaderView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideDetailView)))
