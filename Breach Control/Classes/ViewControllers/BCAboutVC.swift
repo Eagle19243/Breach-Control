@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class BCAboutVC: BCBaseVC {
+class BCAboutVC: BCBaseVC, UIWebViewDelegate {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var btnPrivacy: UIView!
@@ -20,6 +20,7 @@ class BCAboutVC: BCBaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.webView.delegate = self
         let screenSize = UIScreen.main.bounds.size
         var topLayoutY: CGFloat = 0.0
         
@@ -78,4 +79,16 @@ class BCAboutVC: BCBaseVC {
     @IBAction func closeButtonTouchUpInside(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    // MARK: - Delegate
+    
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
+        if (UIWebView.NavigationType.linkClicked == navigationType) {
+            UIApplication.shared.open(request.url!)
+            return false
+        }
+        
+        return true
+    }
+    
 }
