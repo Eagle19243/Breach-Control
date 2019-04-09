@@ -19,9 +19,11 @@ class BCAPIManager: NSObject {
             "X-Parse-REST-API-Key" : ParseRestAPIKey,
             "Content-Type": "application/x-www-form-urlencoded"
         ]
+        
         let params = [
-            "email" : email
-        ]
+            "email" : email,
+            "installation_id" : PFInstallation.current()!.objectId!
+        ] as [String : Any]
         
         Alamofire.request(ParseServerURL + "functions/trigger", method: .post, parameters: params, encoding: URLEncoding.default, headers: headers)
             .responseJSON { (response) in

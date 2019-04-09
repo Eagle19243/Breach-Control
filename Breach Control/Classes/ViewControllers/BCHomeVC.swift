@@ -78,6 +78,10 @@ class BCHomeVC: BCBaseVC, BCBreachesVCDelegate {
             let alert = UIAlertController(title: "Error", message: "Invalid email address", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+        } else if emails.contains(email) {
+            let alert = UIAlertController(title: "Error", message: "The email is already registered", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         } else {
             if edited {
                 emails[row!] = email
